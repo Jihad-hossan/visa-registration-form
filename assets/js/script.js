@@ -126,4 +126,25 @@ $(document).ready(function() {
             $('.has-CoE-yes').hide();
         }
     });
+
+    // Show the NID popup
+    $('#hasNID').change(function() {
+        if ($(this).val() === 'yes') {
+            $('#nidPopup').modal('show'); // Show the popup
+        }
+    });
+    $('#confirmNID').click(function() {
+        $('#nidPopup').modal('hide'); // Hide the popup
+    });
+    $('[data-dismiss="modal"]').click(function() {
+        $('#nidPopup').modal('hide'); // Hide the popup
+    });
+
+    // Change the Country Name with the selected field
+    $('#countryofPassport').change(function() {
+        const selectedCountry = $(this).find('option:selected').text();
+        $('.passportCountry').text(selectedCountry);
+    });
+    $('#countryofPassport').trigger('change');
+    
 });
