@@ -126,6 +126,47 @@ $(document).ready(function() {
             $('.has-CoE-yes').hide();
         }
     });
+    $('#isPreviouslyTravelled').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.isPreviouslyTravelled-Yes').show();
+        } else {
+            $('.isPreviouslyTravelled-Yes').hide();
+        }
+    });
+    $('#hasGrantNumber').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasGrantNumber-yes').show();
+        } else {
+            $('.hasGrantNumber-yes').hide();
+        }
+    });
+    $('#hasOSHC').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasOSHC-yes').show();
+        } else {
+            $('.hasOSHC-yes').hide();
+        }
+    });
+
+    $('#authorisedRecipient').change(function() {
+        if ($(this).val() === '1') {
+            $('.authorisedRecipient-agent').show();
+            $('.authorisedRecipient-practitioner').hide();
+            $('.authorisedRecipient-another').hide();
+        } else if($(this).val() === '2'){
+            $('.authorisedRecipient-practitioner').show();
+            $('.authorisedRecipient-agent').hide();
+            $('.authorisedRecipient-another').hide();
+        }else if($(this).val() === '3'){
+          $('.authorisedRecipient-another').show();
+          $('.authorisedRecipient-practitioner').hide();
+          $('.authorisedRecipient-agent').hide();
+        } else {
+            $('.authorisedRecipient-agent').hide();
+            $('.authorisedRecipient-practitioner').hide();
+            $('.authorisedRecipient-another').hide();
+        }
+    });
 
     // Show the NID popup
     $('#hasNID').change(function() {
@@ -146,5 +187,11 @@ $(document).ready(function() {
         $('.passportCountry').text(selectedCountry);
     });
     $('#countryofPassport').trigger('change');
-    
+
+    // Change email value 
+    $("#EmailAddress").on("input", function() {
+      $("#staticEmail").val($(this).val());
+      console.log("Email updated:", $(this).val());
+  });
+
 });
