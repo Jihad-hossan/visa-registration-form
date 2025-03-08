@@ -40,6 +40,13 @@
 .form-card label{
     margin-bottom: 10px;
 }
+.form-card .form-control.not-full-width{
+    width: auto;
+}
+.form-card .info{
+    font-size: 14px;
+    color: rgb(53, 151, 53);
+}
 .li-search {
     list-style-type: none;
     padding: 0;
