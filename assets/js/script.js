@@ -174,6 +174,20 @@ $(document).ready(function() {
             $('.hasStudiedInAUS-yes').hide();
         }
     });
+    $('#hasTakenENTest').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasTakenENTest-yes').show();
+        } else {
+            $('.hasTakenENTest-yes').hide();
+        }
+    });
+    $('#hasStudied5yrsEN').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasStudied5yrsEN-yes').show();
+        } else {
+            $('.hasStudied5yrsEN-yes').hide();
+        }
+    });
 
     $('#authorisedRecipient').change(function() {
         if ($(this).val() === '1') {
