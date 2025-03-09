@@ -4022,6 +4022,128 @@
                     </div>
                 </div>
 
+                <!-- Countries visited -->
+                <div class="card-body step" style="display: none">
+                    <div class="form-box">
+                        <h3 class="card-title font-weight-bold">Countries visited</h3>
+                        <div class="form-group">
+                            <label for="hasVisitedAnyCountry">Has the applicant visited any countries in the past 10 years? Include:</label>
+                            <ul class="visited-countries">
+                                <li>Work or study outside your usual country of residence</li>
+                                <li>Holiday/leisure trips</li>
+                                <li>Business</li>
+                                <li>Military deployment</li>
+                                <li>Visits back to your usual country of residence if living away</li>
+                            </ul>
+                            <select class="form-control" id="hasVisitedAnyCountry" name="hasVisitedAnyCountry">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-box hasVisitedAnyCountry-yes" style="display: none">
+                        <h5 class="card-title font-weight-bold">Country Visited</h5>
+                        <div id="countries-visited">
+                            <div class="visited-entry">
+                                <input class="form-control" type="text" name="applicantsName[]" placeholder="Name">
+                                <input class="form-control" type="text" name="visitCountry[]" placeholder="Country name">
+                                <input class="form-control" type="date" name="dateFromVisit[]">
+                                <input class="form-control" type="date" name="date_toVisit[]">
+                                <input class="form-control" type="textarea" name="reasonForVisit[]" rows="3" placeholder="Reason for visit">
+                                <button type="button" class="remove-entry btn">Remove</button>
+                            </div>
+                        </div>
+                        <button type="button" class="add-btn" id="add-visited-country">Add Country</button>
+                    </div>
+                </div>
+                <div class="card-body step" style="display: none">
+                    <div class="form-box">
+                        <h5 class="card-title font-weight-bold">Visa history</h5>
+                        <div class="form-group">
+                            <label for="hasCurrentlyVisa">Has the applicant, or any person included in this application, held or currently hold a visa to Australia or any other country?</label>
+                            <select class="form-control" id="hasCurrentlyVisa" name="hasCurrentlyVisa">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hasDepartedBeforePeriod">Has the applicant, or any person included in this application, ever been in Australia or any other country and not complied with visa conditions or departed outside their authorised period of stay?</label>
+                            <select class="form-control" id="hasDepartedBeforePeriod" name="hasDepartedBeforePeriod">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hasVisaCancelled">Has the applicant, or any person included in this application, ever had an application for entry or further stay in Australia or any other country refused, or had a visa cancelled?</label>
+                            <select class="form-control" id="hasVisaCancelled" name="hasVisaCancelled">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group hasVisaCancelled-yes" style="display: none;">
+                            <label for="visaCancelledDetails">Give details</label>
+                            <textarea class="form-control" id="visaCancelledDetails" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health declarations -->
+                <div class="card-body step" style="display: none">
+                    <div class="form-box">
+                        <h3 class="card-title font-weight-bold">Health declarations</h3>
+                        <div class="form-group">
+                            <label for="hasVisitedFor3months">In the last five years, has any applicant visited, or lived, outside their country of passport, for more than 3 consecutive months?</label>
+                            <select class="form-control" id="hasVisitedFor3months" name="hasVisitedFor3months">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-box hasVisitedFor3months-yes" style="display: none">
+                        <h5 class="card-title font-weight-bold">Country Visited</h5>
+                        <div id="countries-visited-3months">
+                            <div class="visited-entry">
+                                <input class="form-control" type="text" name="applicantsName[]" placeholder="Name">
+                                <input class="form-control" type="text" name="visitCountry[]" placeholder="Country name">
+                                <input class="form-control" type="date" name="dateFromVisit[]">
+                                <input class="form-control" type="date" name="date_toVisit[]">
+                                <input class="form-control" type="textarea" name="reasonForVisit[]" rows="3" placeholder="Reason for visit">
+                                <button type="button" class="remove-entry btn">Remove</button>
+                            </div>
+                        </div>
+                        <button type="button" class="add-btn" id="add-visited-country-3months">Add Country</button>
+                    </div>
+                </div>
+                <div class="card-body step" style="display: none">
+                    <div class="form-box">
+                        <div class="form-group">
+                            <label for="hasAdmittedInHospital">Does any applicant intend to enter a hospital or a health care facility (including nursing homes) while in the applied country?</label>
+                            <select class="form-control" id="hasAdmittedInHospital" name="hasAdmittedInHospital">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-box hasAdmittedInHospital-yes" style="display: none">
+                        <h5 class="card-title font-weight-bold">Add details</h5>
+                        <div id="addmited-hospital">
+                            <div class="hospital-entry">
+                                <input class="form-control" type="text" name="hospitalName[]" placeholder="Hospital Name">
+                                <input class="form-control" type="textarea" name="reasonForVisit[]" rows="3" placeholder="Reason...">
+                                <input class="form-control" type="text" name="actionInHospital[]" placeholder="Actions">
+                                <button type="button" class="remove-entry btn">Remove</button>
+                            </div>
+                        </div>
+                        <button type="button" class="add-btn" id="add-addmited-hospital">Add Hospital</button>
+                    </div>
+                </div>
+
                 <!-- Card Footer -->
                 <div class="card-footer">
                     <button class="action back btn" style="display: none">Back</button>
@@ -4077,6 +4199,7 @@
                         </div>
                     </div>
                 </div>
+                
                 </form>
             </div>
         

@@ -110,7 +110,9 @@
     return valid;
   }
 
+// ================================
 // Conditional logics
+// ================================
 $(document).ready(function() {
     $('#locationStatus').change(function() {
         if ($(this).val() === 'Other') {
@@ -188,6 +190,34 @@ $(document).ready(function() {
             $('.hasStudied5yrsEN-yes').hide();
         }
     });
+    $('#hasVisitedAnyCountry').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasVisitedAnyCountry-yes').show();
+        } else {
+            $('.hasVisitedAnyCountry-yes').hide();
+        }
+    });
+    $('#hasVisaCancelled').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasVisaCancelled-yes').show();
+        } else {
+            $('.hasVisaCancelled-yes').hide();
+        }
+    });
+    $('#hasVisitedFor3months').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasVisitedFor3months-yes').show();
+        } else {
+            $('.hasVisitedFor3months-yes').hide();
+        }
+    });
+    $('#hasAdmittedInHospital').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasAdmittedInHospital-yes').show();
+        } else {
+            $('.hasAdmittedInHospital-yes').hide();
+        }
+    });
 
     $('#authorisedRecipient').change(function() {
         if ($(this).val() === '1') {
@@ -209,6 +239,9 @@ $(document).ready(function() {
         }
     });
 
+    // ================================
+    // Popups
+    // ================================
     // Show the NID popup
     $('#hasNID').change(function() {
         if ($(this).val() === 'yes') {
@@ -222,6 +255,10 @@ $(document).ready(function() {
         $('#nidPopup').modal('hide'); // Hide the popup
     });
 
+
+     // ================================
+    // Change value dynamicaly
+    // ================================
     // Change the Country Name with the selected field
     $('#countryofPassport').change(function() {
         const selectedCountry = $(this).find('option:selected').text();
@@ -237,6 +274,9 @@ $(document).ready(function() {
 
 });
 
+// ================================
+// Repeaters
+// ================================
 // Educational repeater field outside AUS
 document.getElementById('add-education-entry').addEventListener('click', function() {
   var container = document.getElementById('education-history');
@@ -278,5 +318,69 @@ document.getElementById('AUS-add-education-entry').addEventListener('click', fun
 document.addEventListener('click', function(event) {
   if (event.target && event.target.classList.contains('remove-entry')) {
       event.target.closest('.education-entry').remove();
+  }
+});
+
+// Country Visited
+document.getElementById('add-visited-country').addEventListener('click', function() {
+  var container = document.getElementById('countries-visited');
+  var newEntry = document.createElement('div');
+  newEntry.classList.add('visited-entry');
+  newEntry.innerHTML = `
+      <input type="text" class="form-control" name="applicantsName[]" placeholder="Name">
+      <input type="text" class="form-control" name="visitCountry[]" placeholder="Country name">
+      <input type="date" class="form-control" name="dateFromVisit[]">
+      <input type="date" class="form-control" name="date_toVisit[]">
+      <input class="form-control" type="textarea" name="reasonForVisit[]" rows="3" placeholder="Reason for visit">
+      <button type="button" class="remove-entry btn">Remove</button>
+  `;
+  container.appendChild(newEntry);
+});
+
+document.addEventListener('click', function(event) {
+  if (event.target && event.target.classList.contains('remove-entry')) {
+      event.target.closest('.visited-entry').remove();
+  }
+});
+
+// Country Visited for 3 months
+document.getElementById('add-visited-country-3months').addEventListener('click', function() {
+  var container = document.getElementById('countries-visited-3months');
+  var newEntry = document.createElement('div');
+  newEntry.classList.add('visited-entry');
+  newEntry.innerHTML = `
+      <input type="text" class="form-control" name="applicantsName[]" placeholder="Name">
+      <input type="text" class="form-control" name="visitCountry[]" placeholder="Country name">
+      <input type="date" class="form-control" name="dateFromVisit[]">
+      <input type="date" class="form-control" name="date_toVisit[]">
+      <input class="form-control" type="textarea" name="reasonForVisit[]" rows="3" placeholder="Reason for visit">
+      <button type="button" class="remove-entry btn">Remove</button>
+  `;
+  container.appendChild(newEntry);
+});
+
+document.addEventListener('click', function(event) {
+  if (event.target && event.target.classList.contains('remove-entry')) {
+      event.target.closest('.visited-entry').remove();
+  }
+});
+
+// Admitted Hospital
+document.getElementById('add-addmited-hospital').addEventListener('click', function() {
+  var container = document.getElementById('addmited-hospital');
+  var newEntry = document.createElement('div');
+  newEntry.classList.add('hospital-entry');
+  newEntry.innerHTML = `
+      <input class="form-control" type="text" name="hospitalName[]" placeholder="Hospital Name">
+      <input class="form-control" type="textarea" name="reasonForVisit[]" rows="3" placeholder="Reason...">
+      <input class="form-control" type="text" name="actionInHospital[]" placeholder="Actions">
+      <button type="button" class="remove-entry btn">Remove</button>
+  `;
+  container.appendChild(newEntry);
+});
+
+document.addEventListener('click', function(event) {
+  if (event.target && event.target.classList.contains('remove-entry')) {
+      event.target.closest('.hospital-entry').remove();
   }
 });
