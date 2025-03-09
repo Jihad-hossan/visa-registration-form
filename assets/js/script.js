@@ -122,10 +122,17 @@ $(document).ready(function() {
         }
     });
     $('#hasCoE').change(function() {
-        if ($(this).val() === 'Yes') {
-            $('.has-CoE-yes').show();
+        if ($(this).val() === 'yes') {
+            $('.hasCoE-yes').show();
         } else {
-            $('.has-CoE-yes').hide();
+            $('.hasCoE-yes').hide();
+        }
+    });
+    $('#hasNoCoE').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasNoCoE-yes').show();
+        } else {
+            $('.hasNoCoE-yes').hide();
         }
     });
     $('#isPreviouslyTravelled').change(function() {
@@ -218,6 +225,48 @@ $(document).ready(function() {
             $('.hasAdmittedInHospital-yes').hide();
         }
     });
+    $('#isIntedToWorkInHospital').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.isIntedToWorkInHospital-yes').show();
+        } else {
+            $('.isIntedToWorkInHospital-yes').hide();
+        }
+    });
+    $('#isIntedToWorkInCareHospital').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.isIntedToWorkInCareHospital-yes').show();
+        } else {
+            $('.isIntedToWorkInCareHospital-yes').hide();
+        }
+    });
+    $('#isIntedToWorkInChildCareHospital').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.isIntedToWorkInChildCareHospital-yes').show();
+        } else {
+            $('.isIntedToWorkInChildCareHospital-yes').hide();
+        }
+    });
+    $('#hasTuberculosis').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasTuberculosis-yes').show();
+        } else {
+            $('.hasTuberculosis-yes').hide();
+        }
+    });
+    $('#hasDisease').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasDisease-yes').show();
+        } else {
+            $('.hasDisease-yes').hide();
+        }
+    });
+    $('#requireOngoingMedicalCare').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.requireOngoingMedicalCare-yes').show();
+        } else {
+            $('.requireOngoingMedicalCare-yes').hide();
+        }
+    });
 
     $('#authorisedRecipient').change(function() {
         if ($(this).val() === '1') {
@@ -277,6 +326,54 @@ $(document).ready(function() {
 // ================================
 // Repeaters
 // ================================
+// CoE repeater
+document.getElementById('add-CoE-details').addEventListener('click', function() {
+  var container = document.getElementById('hasCoE-details');
+  var newEntry = document.createElement('div');
+  newEntry.classList.add('CoE-entry');
+  newEntry.innerHTML = `
+      <input class="form-control" type="text" name="CoEName[]" placeholder="Name">
+      <input class="form-control" type="text" name="CoEActions[]" placeholder="Actions">
+      <button type="button" class="remove-entry btn">Remove</button>
+  `;
+  container.appendChild(newEntry);
+});
+
+document.addEventListener('click', function(event) {
+  if (event.target && event.target.classList.contains('remove-entry')) {
+      event.target.closest('.CoE-entry').remove();
+  }
+});
+
+// Non CoE repeater
+document.getElementById('add-other-evidence').addEventListener('click', function() {
+  var container = document.getElementById('other-evidence');
+  var newEntry = document.createElement('div');
+  newEntry.classList.add('Non-CoE-entry');
+  newEntry.innerHTML = `
+      <select class="form-control" id="evidenceType">
+          <option value="" disabled selected>Please Select</option>
+          <option value="Letter of Offer ">Letter of Offer </option>
+          <option value="Advice Acceptance of Secondary Students">Advice Acceptance of Secondary Students</option>
+          <option value="Letter of Post Graduate Thesis Marking">Letter of Post Graduate Thesis Marking</option>
+          <option value="Department of Foreign Affairs and Trade letter of Support">Department of Foreign Affairs and Trade letter of Support</option>
+          <option value="Department of Defense letter of Support">Department of Defense letter of Support</option>
+      </select>
+      <input class="form-control" type="text" name="CourseName[]" placeholder="Course Name & Code">
+      <input class="form-control" type="text" name="EducationProvider []" placeholder="Education Provider">
+      <input class="form-control" type="date" name="CommencementDate[]" placeholder="Commencement Date">
+      <input class="form-control" type="date" name="CompletionDate[]" placeholder="Completion Date">
+      <button type="button" class="remove-entry btn">Remove</button>
+  `;
+  container.appendChild(newEntry);
+});
+
+document.addEventListener('click', function(event) {
+  if (event.target && event.target.classList.contains('remove-entry')) {
+      event.target.closest('.Non-CoE-entry').remove();
+  }
+});
+
 // Educational repeater field outside AUS
 document.getElementById('add-education-entry').addEventListener('click', function() {
   var container = document.getElementById('education-history');
@@ -374,6 +471,128 @@ document.getElementById('add-addmited-hospital').addEventListener('click', funct
       <input class="form-control" type="text" name="hospitalName[]" placeholder="Hospital Name">
       <input class="form-control" type="textarea" name="reasonForVisit[]" rows="3" placeholder="Reason...">
       <input class="form-control" type="text" name="actionInHospital[]" placeholder="Actions">
+      <button type="button" class="remove-entry btn">Remove</button>
+  `;
+  container.appendChild(newEntry);
+});
+
+document.addEventListener('click', function(event) {
+  if (event.target && event.target.classList.contains('remove-entry')) {
+      event.target.closest('.hospital-entry').remove();
+  }
+});
+
+// Worked Hospital
+document.getElementById('add-worked-hospital').addEventListener('click', function() {
+  var container = document.getElementById('worked-hospital');
+  var newEntry = document.createElement('div');
+  newEntry.classList.add('worked-hospital-entry');
+  newEntry.innerHTML = `
+      <input class="form-control" type="text" name="workedName[]" placeholder="Name">
+      <input class="form-control" type="text" name="Role[]" placeholder="Role">
+      <input class="form-control" type="textarea" name="workedDetails[]" rows="3" placeholder="Details">
+      <input class="form-control" type="text" name="workedActions[]" placeholder="Actions">
+      <button type="button" class="remove-entry btn">Remove</button>
+  `;
+  container.appendChild(newEntry);
+});
+
+document.addEventListener('click', function(event) {
+  if (event.target && event.target.classList.contains('remove-entry')) {
+      event.target.closest('.worked-hospital-entry').remove();
+  }
+});
+
+// Worked in Care Hospital
+document.getElementById('add-worked-care-hospital').addEventListener('click', function() {
+  var container = document.getElementById('worked-care-hospital');
+  var newEntry = document.createElement('div');
+  newEntry.classList.add('worked-hospital-entry');
+  newEntry.innerHTML = `
+      <input class="form-control" type="text" name="workedCareName[]" placeholder="Name">
+      <input class="form-control" type="text" name="careRole[]" placeholder="Role">
+      <input class="form-control" type="textarea" name="workedCareDetails[]" rows="3" placeholder="Details">
+      <input class="form-control" type="text" name="workedCareActions[]" placeholder="Actions">
+      <button type="button" class="remove-entry btn">Remove</button>
+  `;
+  container.appendChild(newEntry);
+});
+
+document.addEventListener('click', function(event) {
+  if (event.target && event.target.classList.contains('remove-entry')) {
+      event.target.closest('.worked-hospital-entry').remove();
+  }
+});
+
+// Worked in Child Care Hospital
+document.getElementById('add-worked-child-care-hospital').addEventListener('click', function() {
+  var container = document.getElementById('worked-child-care-hospital');
+  var newEntry = document.createElement('div');
+  newEntry.classList.add('hospital-entry');
+  newEntry.innerHTML = `
+      <input class="form-control" type="text" name="careHospitalName[]" placeholder="Name">
+      <input class="form-control" type="textarea" name="careDetails[]" rows="3" placeholder="Detais">
+      <input class="form-control" type="text" name="careActionInHospital[]" placeholder="Actions">
+      <button type="button" class="remove-entry btn">Remove</button>
+  `;
+  container.appendChild(newEntry);
+});
+
+document.addEventListener('click', function(event) {
+  if (event.target && event.target.classList.contains('remove-entry')) {
+      event.target.closest('.hospital-entry').remove();
+  }
+});
+
+// Has/Had Tuberculosis
+document.getElementById('add-tuberculosis').addEventListener('click', function() {
+  var container = document.getElementById('has-tuberculosis');
+  var newEntry = document.createElement('div');
+  newEntry.classList.add('hospital-entry');
+  newEntry.innerHTML = `
+      <input class="form-control" type="text" name="tuberculosisName[]" placeholder="Name">
+      <input class="form-control" type="textarea" name="tuberculosisDetails[]" rows="3" placeholder="Detais">
+      <input class="form-control" type="text" name="tuberculosisAction[]" placeholder="Actions">
+      <button type="button" class="remove-entry btn">Remove</button>
+  `;
+  container.appendChild(newEntry);
+});
+
+document.addEventListener('click', function(event) {
+  if (event.target && event.target.classList.contains('remove-entry')) {
+      event.target.closest('.hospital-entry').remove();
+  }
+});
+
+// Has/Had Disease
+document.getElementById('add-disease').addEventListener('click', function() {
+  var container = document.getElementById('has-disease');
+  var newEntry = document.createElement('div');
+  newEntry.classList.add('hospital-entry');
+  newEntry.innerHTML = `
+      <input class="form-control" type="text" name="diseaseName[]" placeholder="Name">
+      <input class="form-control" type="textarea" name="diseaseCondition[]" rows="3" placeholder="Condition">
+      <input class="form-control" type="text" name="actionForDisease[]" placeholder="Actions">
+      <button type="button" class="remove-entry btn">Remove</button>
+  `;
+  container.appendChild(newEntry);
+});
+
+document.addEventListener('click', function(event) {
+  if (event.target && event.target.classList.contains('remove-entry')) {
+      event.target.closest('.hospital-entry').remove();
+  }
+});
+
+// Require Medical Care
+document.getElementById('add-require-medical-care').addEventListener('click', function() {
+  var container = document.getElementById('require-medical-care');
+  var newEntry = document.createElement('div');
+  newEntry.classList.add('hospital-entry');
+  newEntry.innerHTML = `
+      <input class="form-control" type="text" name="treatmentName[]" placeholder="Name">
+      <input class="form-control" type="textarea" name="treatmentDetails[]" rows="3" placeholder="Details">
+      <input class="form-control" type="text" name="actionTreatment[]" placeholder="Actions">
       <button type="button" class="remove-entry btn">Remove</button>
   `;
   container.appendChild(newEntry);

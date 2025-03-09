@@ -69,9 +69,19 @@
 }
 
 /* Repeater style */
-div#education-history, div#AUS-education-history, div#countries-visited, #countries-visited-3months, #addmited-hospital {
+div#education-history, div#AUS-education-history, div#countries-visited, #countries-visited-3months, #addmited-hospital, #worked-hospital, #worked-care-hospital, #worked-child-care-hospital, #has-tuberculosis, #has-disease, #require-medical-care, #hasCoE-details, #other-evidence {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+}
+.CoE-entry {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    gap: 10px;
+}
+.Non-CoE-entry {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr 1fr 1fr;
     gap: 10px;
 }
 .education-entry {
@@ -89,6 +99,11 @@ div#education-history, div#AUS-education-history, div#countries-visited, #countr
     grid-template-columns: 3fr 3fr 3fr 1fr;
     gap: 10px;
 }
+.worked-hospital-entry {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr 3fr 1fr;
+    gap: 10px;
+}
 
 .remove-entry {
     cursor: pointer;
@@ -96,7 +111,7 @@ div#education-history, div#AUS-education-history, div#countries-visited, #countr
 .remove-entry:hover{
     background-color: var(--btn-bg);
 }
-button#add-education-entry, button#AUS-add-education-entry,  button#add-visited-country, button#add-visited-country-3months, button#add-addmited-hospital{
+button#add-education-entry, button#AUS-add-education-entry,  button#add-visited-country, button#add-visited-country-3months, button#add-addmited-hospital, #add-worked-hospital, #add-worked-care-hospital, #add-worked-child-care-hospital, #add-tuberculosis, #add-disease, #add-require-medical-care, #add-CoE-details, #add-other-evidence{
     display: inline-flex;
     width: 180px;
     padding: 8px 15px;
@@ -104,7 +119,7 @@ button#add-education-entry, button#AUS-add-education-entry,  button#add-visited-
     border: 1px solid #f8f9fa;
     justify-content: center;
 }
-button#add-education-entry:hover, button#AUS-add-education-entry:hover, button#add-visited-country:hover, button#add-visited-country-3months:hover, button#add-addmited-hospital:hover{
+button#add-education-entry:hover, button#AUS-add-education-entry:hover, button#add-visited-country:hover, button#add-visited-country-3months:hover, button#add-addmited-hospital:hover, #add-worked-hospital:hover, #add-worked-care-hospital:hover, #add-worked-child-care-hospital:hover, #add-tuberculosis:hover, #add-disease:hover, #add-require-medical-care:hover, #add-CoE-details:hover, #add-other-evidence:hover{
     color: var(--white);
     background-color: var(--btn-bg);
 }
