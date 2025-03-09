@@ -147,6 +147,33 @@ $(document).ready(function() {
             $('.hasOSHC-yes').hide();
         }
     });
+    $('#HighestLevelOfSchooling').change(function() {
+        if ($(this).val() === '11') {
+            $('.HighestLevelOfSchooling-yes').hide();
+            $('.HighestLevelOfSchooling-other').hide();
+        } else if($(this).val() === '12'){
+            $('.HighestLevelOfSchooling-yes').hide();
+            $('.HighestLevelOfSchooling-other').show();
+        }
+        else {
+            $('.HighestLevelOfSchooling-yes').show();
+        }
+    });
+
+    $('#isEnrollledOtherCountry').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.isEnrollledOtherCountry-yes').show();
+        } else {
+            $('.isEnrollledOtherCountry-yes').hide();
+        }
+    });
+    $('#hasStudiedInAUS').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasStudiedInAUS-yes').show();
+        } else {
+            $('.hasStudiedInAUS-yes').hide();
+        }
+    });
 
     $('#authorisedRecipient').change(function() {
         if ($(this).val() === '1') {
@@ -194,4 +221,48 @@ $(document).ready(function() {
       console.log("Email updated:", $(this).val());
   });
 
+});
+
+// Educational repeater field outside AUS
+document.getElementById('add-education-entry').addEventListener('click', function() {
+  var container = document.getElementById('education-history');
+  var newEntry = document.createElement('div');
+  newEntry.classList.add('education-entry');
+  newEntry.innerHTML = `
+      <input type="text" class="form-control" name="certification[]" placeholder="Certification">
+      <input type="text" class="form-control" name="institution[]" placeholder="Institution name">
+      <input type="text" class="form-control" name="course[]" placeholder="Course name">
+      <input type="date" class="form-control" name="date_from[]">
+      <input type="date" class="form-control" name="date_to[]">
+      <button type="button" class="remove-entry btn">Remove</button>
+  `;
+  container.appendChild(newEntry);
+});
+
+document.addEventListener('click', function(event) {
+  if (event.target && event.target.classList.contains('remove-entry')) {
+      event.target.closest('.education-entry').remove();
+  }
+});
+
+// Educational repeater field in AUS
+document.getElementById('AUS-add-education-entry').addEventListener('click', function() {
+  var container = document.getElementById('AUS-education-history');
+  var newEntry = document.createElement('div');
+  newEntry.classList.add('education-entry');
+  newEntry.innerHTML = `
+      <input type="text" class="form-control" name="certification[]" placeholder="Certification">
+      <input type="text" class="form-control" name="institution[]" placeholder="Institution name">
+      <input type="text" class="form-control" name="course[]" placeholder="Course name">
+      <input type="date" class="form-control" name="date_from[]">
+      <input type="date" class="form-control" name="date_to[]">
+      <button type="button" class="remove-entry btn">Remove</button>
+  `;
+  container.appendChild(newEntry);
+});
+
+document.addEventListener('click', function(event) {
+  if (event.target && event.target.classList.contains('remove-entry')) {
+      event.target.closest('.education-entry').remove();
+  }
 });
