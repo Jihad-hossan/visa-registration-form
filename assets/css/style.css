@@ -145,3 +145,15 @@ button#add-education-entry:hover, button#AUS-add-education-entry:hover, button#a
 .modal-footer {
   border-top: 1px solid #dee2e6;
 }
+
+@media  screen and (max-width: 767px) {
+    .Non-CoE-entry, .education-entry, .visited-entry, .hospital-entry, .worked-hospital-entry{
+        grid-template-columns: 1fr;
+    }
+    .form-card .multi-column, .form-card .multi-column-3{
+        grid-template-columns: 1fr;
+    }
+    #nidPopup{
+        padding: 0 !important;
+    }
+}
