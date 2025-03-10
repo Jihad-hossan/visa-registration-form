@@ -3401,6 +3401,475 @@
                             </select>
                         </div>
                     </div>
+                    <div class="form-box">
+                        <h5 class="card-title font-weight-bold">Multiple transits</h5>
+                        <div class="form-group">
+                            <label for="intendToMultipleTransits">Does the applicant intend to visit the applying country on more than one occasion?</label>
+                            <select class="form-control" id="intendToMultipleTransits" name="intendToMultipleTransits">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health declarations -->
+                <div class="card-body step" style="display: none">
+                    <div class="form-box">
+                        <h3 class="card-title font-weight-bold">Health declarations</h3>
+                        <div class="form-group">
+                            <label for="hasOSHC">In the last five years, has any applicant visited, or lived, outside their country of passport, for more than 3 consecutive months? Do not include time spent in the applying country.</label>
+                            <select class="form-control" id="hasOSHC" name="hasOSHC">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="isIntendToEnterHospital">Does any applicant intend to enter a hospital or a health care facility (including nursing homes) while in the applying country?</label>
+                            <select class="form-control" id="isIntendToEnterHospital" name="hasOSHC">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hasTuberculosis">Has any applicant:</label>
+                            <ul class="visited-countries">
+                                <li>Ever had, or currently have, tuberculosis?</li>
+                                <li>Been in close contact with a family member that has active tuberculosis?</li>
+                                <li>Ever had a chest x-ray which showed an abnormality?</li>
+                            </ul>
+                            <select class="form-control" id="hasTuberculosis" name="hasTuberculosis">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-box">
+                        <div class="form-group">
+                            <label for="hasDisease">During their proposed visit to Australia, does any applicant expect to incur medical costs, or require treatment or medical follow up for:</label>
+                            <ul class="visited-countries">
+                                <li>Blood disorder</li>
+                                <li>Cancer</li>
+                                <li>Heart disease</li>
+                                <li>Hepatitis B or C and/or liver disease</li>
+                                <li>HIV infection, including AIDS</li>
+                                <li>Kidney disease, including dialysis</li>
+                                <li>Mental illness</li>
+                                <li>Pregnancy</li>
+                                <li>Respiratory disease that has required hospital admission or oxygen therapy</li>
+                                <li>Other?</li>
+                            </ul>
+                            <select class="form-control" id="hasDisease" name="hasDisease">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Character declarations -->
+                <div class="card-body step" style="display: none">
+                    <div class="form-box">
+                        <h3 class="card-title font-weight-bold">Character declarations</h3>
+                        <p class="mb-0">If the applicant answers ‘Yes’ to any of the character declarations they must give all relevant details. For combined applications, state which applicant the declaration applies to.</p>
+                        <p class="mb-0">If the matter relates to a criminal conviction, provide:</p>
+                        <ul class="visited-countries">
+                            <li>The date and nature of the offence</li>
+                            <li>Full details of the sentence</li>
+                            <li>Dates of any period of imprisonment or other detention</li>
+                        </ul>
+                        <div class="form-group">
+                            <label for="hasOffenceCurrentlyAwaiting">Has any applicant ever been charged with any offence that is currently awaiting legal action?</label>
+                            <select class="form-control" id="hasOffenceCurrentlyAwaiting" name="hasOffenceCurrentlyAwaiting">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hasRemovedOffence">Has any applicant ever been convicted of an offence in any country (including any conviction which is now removed from official records)?</label>
+                            <select class="form-control" id="hasRemovedOffence" name="hasRemovedOffence">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hasDomesticViolence">Has any applicant ever been the subject of a domestic violence or family violence order, or any other order, of a tribunal or court or other similar authority, for the personal protection of another person?</label>
+                            <select class="form-control" id="hasDomesticViolence" name="hasDomesticViolence">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hasArrestWarrant">Has any applicant ever been the subject of an arrest warrant or Interpol notice?</label>
+                            <select class="form-control" id="hasArrestWarrant" name="hasArrestWarrant">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hasSexualOffence">Has any applicant ever been found guilty of a sexually based offence involving a child (including where no conviction was recorded)?</label>
+                            <select class="form-control" id="hasSexualOffence" name="hasSexualOffence">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hasRegisteredSexualOffence">Has any applicant ever been named on a sex offender register?</label>
+                            <select class="form-control" id="hasRegisteredSexualOffence" name="hasRegisteredSexualOffence">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hasInsanityOffence">Has any applicant ever been acquitted of any offence on the grounds of unsoundness of mind or insanity?</label>
+                            <select class="form-control" id="hasInsanityOffence" name="hasInsanityOffence">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hasInCourtNotPlead">Has any applicant ever been found by a court not fit to plead?</label>
+                            <select class="form-control" id="hasInCourtNotPlead" name="hasInCourtNotPlead">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body step" style="display: none">
+                    <div class="form-box">
+                        <h3 class="card-title font-weight-bold">Character declarations</h3>
+                        <div class="form-group">
+                            <label for="hasOffenceNationalSecurity">Has any applicant ever been directly or indirectly involved in, or associated with, activities which would represent a risk to national security in applied country or any other country?</label>
+                            <select class="form-control" id="hasOffenceNationalSecurity" name="hasOffenceNationalSecurity">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hasGenocideOffence">Has any applicant ever been charged with, or indicted for: genocide, war crimes, crimes against humanity, torture, slavery, or any other crime that is otherwise of a serious international concern?</label>
+                            <select class="form-control" id="hasGenocideOffence" name="hasGenocideOffence">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hasAssociatedWithCriminal">Has any applicant ever been associated with a person, group or organisation that has been or is involved in criminal conduct?</label>
+                            <select class="form-control" id="hasAssociatedWithCriminal" name="hasAssociatedWithCriminal">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hasAssociatedWithWarCrimeOrganisation">Has any applicant ever been associated with an organisation engaged in violence or engaged in acts of violence (including war, insurgency, freedom fighting, terrorism, protest) either overseas or in applied country?</label>
+                            <select class="form-control" id="hasAssociatedWithWarCrimeOrganisation" name="hasAssociatedWithWarCrimeOrganisation">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hasServedInAnyForce">Has any applicant ever served in a military force, police force, state sponsored / private militia or intelligence agency (including secret police)?</label>
+                            <select class="form-control" id="hasServedInAnyForce" name="hasServedInAnyForce">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hasMilitaryTraining">Has any applicant ever undergone any military/paramilitary training, been trained in weapons/explosives or in the manufacture of chemical/biological products?</label>
+                            <select class="form-control" id="hasMilitaryTraining" name="hasMilitaryTraining">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hasTraffickingOffences">Has any applicant ever been involved in people smuggling or people trafficking offences?</label>
+                            <select class="form-control" id="hasTraffickingOffences" name="hasTraffickingOffences">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hasRemovedFromAnyCountry">Has any applicant ever been removed, deported or excluded from any country (including applied country)?</label>
+                            <select class="form-control" id="hasRemovedFromAnyCountry" name="hasRemovedFromAnyCountry">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hasOverstayedVisa">Has any applicant ever overstayed a visa in any country (including applied country)?</label>
+                            <select class="form-control" id="hasOverstayedVisa" name="hasOverstayedVisa">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hasOutstandingDebts">Has any applicant ever had any outstanding debts to the Government or any public authority in country of residence or applied country?</label>
+                            <select class="form-control" id="hasOutstandingDebts" name="hasOutstandingDebts">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visa history -->
+                <div class="card-body step" style="display: none">
+                    <div class="form-box">
+                        <h5 class="card-title font-weight-bold">Visa history</h5>
+                        <div class="form-group">
+                            <label for="hasCurrentlyVisa">Has the applicant held or does the applicant currently hold a visa to the applying country or any other country?</label>
+                            <select class="form-control" id="hasCurrentlyVisa" name="hasCurrentlyVisa">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hasDepartedBeforePeriod">Has the applicant ever been in the applying country or any other country and not complied with visa conditions or departed outside their authorised period of stay?</label>
+                            <select class="form-control" id="hasDepartedBeforePeriod" name="hasDepartedBeforePeriod">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hasVisaCancelled">Has the applicant ever had a visa for the applying country or any other country refused or cancelled?</label>
+                            <select class="form-control" id="hasVisaCancelled" name="hasVisaCancelled">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group hasVisaCancelled-yes" style="display: none;">
+                            <label for="visaCancelledDetails">Give details</label>
+                            <textarea class="form-control" id="visaCancelledDetails" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visit declarations -->
+                <div class="card-body step" style="display: none">
+                    <div class="form-box">
+                        <h3 class="card-title font-weight-bold">Visit declarations</h3>
+                        <h5 class="text-warning mb-0">Warning:</h5>
+                        <p class="mb-0 text-warning">Giving false or misleading information is a serious offence.</p>
+                        <p class="mb-0">The applicants declare that they:</p>
+                        <div class="form-group">
+                            <label for="HaveConcludedMakingArrangements">Have concluded making arrangements for travel to a destination outside the applying country.</label>
+                            <select class="form-control" id="HaveConcludedMakingArrangements" name="HaveConcludedMakingArrangements">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hasRightToEnterDestination">Have the right to legally enter their next destination country outside the applying country or they are eligible to obtain a visa on arrival.</label>
+                            <select class="form-control" id="hasRightToEnterDestination" name="hasRightToEnterDestination">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="understandPrinciplePurpose">Understand that the principle purpose of a Visitor visa is to visit the applying country in as visitor, and not working or studying.</label>
+                            <select class="form-control" id="understandPrinciplePurpose" name="understandPrinciplePurpose">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="understandRulesOf90daysEntry">Understand that the Visitor visa allows visa holders to visit the applying country for up to 90 days on each entry.</label>
+                            <select class="form-control" id="understandRulesOf90daysEntry" name="understandRulesOf90daysEntry">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Declarations -->
+                <div class="card-body step" style="display: none">
+                    <div class="form-box">
+                        <h3 class="card-title font-weight-bold">Declarations</h3>
+                        <h5 class="text-warning mb-0">Warning:</h5>
+                        <p class="mb-0 text-warning">Giving false or misleading information is a serious offence.</p>
+                        <p class="mb-0">The applicants declare that they:</p>
+                        <div class="form-group">
+                            <label for="understoodTheInformationProvided">Have read and understood the information provided to them in this application.</label>
+                            <select class="form-control" id="understoodTheInformationProvided" name="understoodTheInformationProvided">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="providedCorrectInformation">Have provided complete and correct information in every detail on this form, and on any attachments to it.</label>
+                            <select class="form-control" id="providedCorrectInformation" name="providedCorrectInformation">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="UnderstandApplicationMayRefused">Understand that if any fraudulent documents or false or misleading information has been provided with this application, or if any of the applicants fail to satisfy the Minister of their identity, the application may be refused and the applicant(s), and any member of their family unit, may become unable to be granted a visa for a specified period of time.</label>
+                            <select class="form-control" id="UnderstandApplicationMayRefused" name="UnderstandApplicationMayRefused">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="UnderstandApplicationMayCancelled">Understand that if documents are found to be fraudulent or information to be incorrect after the grant of a visa, the visa may subsequently be cancelled.</label>
+                            <select class="form-control" id="UnderstandApplicationMayCancelled" name="UnderstandApplicationMayCancelled">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="immediatelyNotifyChanges">Will immediately notify the Department in writing about any changes to their email or residential address, course enrolment, or members of their family unit, or changes to any information they provided in their application, while this application is being considered.</label>
+                            <select class="form-control" id="immediatelyNotifyChanges" name="immediatelyNotifyChanges">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body step" style="display: none">
+                    <div class="form-box">
+                        <h3 class="card-title font-weight-bold">Declarations</h3>
+                        <div class="form-group">
+                            <label for="haveReadPrivacyNotice">Have read the information contained in the Privacy Notice.</label>
+                            <select class="form-control" id="haveReadPrivacyNotice" name="haveReadPrivacyNotice">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="haveUnderstandDepartmentMayCollect">Understand that the department may collect, use and disclose the applicant's personal information (including biometric information and other sensitive information) as outlined in the Privacy Notice.</label>
+                            <select class="form-control" id="haveUnderstandDepartmentMayCollect" name="haveUnderstandDepartmentMayCollect">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="agreeNotToStudyMore90days">Agree not to undertake study or training for more than three months.</label>
+                            <select class="form-control" id="agreeNotToStudyMore90days" name="agreeNotToStudyMore90days">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="agreeToLeaveBeforeExpiry">Agree to leave the applying country on or before the expiry of the period of stay of the visa.</label>
+                            <select class="form-control" id="agreeToLeaveBeforeExpiry" name="agreeToLeaveBeforeExpiry">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="giveConsentFingerprints">Give consent to the collection of their fingerprints and facial image if required.</label>
+                            <select class="form-control" id="giveConsentFingerprints" name="giveConsentFingerprints">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="giveConsentApplicantBiometric">Understand that, if required to provide their fingerprints and facial image, the applicant's fingerprints and facial image and biographical information held by the Department may be given to the law enforcement agencies of the applying country to help identify the applicant and determine eligibility for grant of the visa being applied for, and for law enforcement purposes.</label>
+                            <select class="form-control" id="giveConsentApplicantBiometric" name="giveConsentApplicantBiometric">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="giveConsentApplicantBiometricLawEnforce">Give consent to the law enforcement agencies of the applying country disclosing the applicant's biometric, biographical and criminal record information to the Department to help identify the applicant, to determine eligibility for grant of a visa and for law enforcement purposes.</label>
+                            <select class="form-control" id="giveConsentApplicantBiometricLawEnforce" name="giveConsentApplicantBiometricLawEnforce">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="understandNotPermitToWork">Understand that the Visitor visa does not permit them to work in the applying country.</label>
+                            <select class="form-control" id="understandNotPermitToWork" name="understandNotPermitToWork">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="giveConsentApplicantBiometricCriminal">Give consent to the Department using the applicant's biometric, biographical and criminal record information obtained for the purposes of the Migration Act 1958 or the Citizenship Act 2007.</label>
+                            <select class="form-control" id="giveConsentApplicantBiometricCriminal" name="giveConsentApplicantBiometricCriminal">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body step" style="display: none">
+                    <div class="form-box">
+                        <p class="mb-0">As an applicant:</p>
+                        <div class="form-group">
+                            <label for="hasNotAnotherVisa">I understand that if my visa ceases to be in effect and I do not hold another visa to remain in the applying country at that time, I will be an unlawful non-citizen under the Migration Act 1958. As such, I will be expected to depart from the applying country, and be subject to removal under the Migration Act 1958.</label>
+                            <select class="form-control" id="hasNotAnotherVisa" name="hasNotAnotherVisa">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-box">
+                        <h5 class="card-title font-weight-bold">Evidence</h5>
+                        <div class="form-group">
+                            <p class="mb-0">Documents to Upload</p>
+                            <ul>
+                                <li>Evidence of current employment or self-employment</li>
+                                <li>Visa for country of residence (and right to return)</li>
+                                <li>Travel History, Evidence of</li>
+                                <li>National Identity Document (other than passport)</li>
+                                <li>Travel Document (passport bio-page copy)</li>
+                                <li>Photograph - passport</li>
+                                <li>Onward Booking from applied country, Evidence of</li>
+                                <li>Ticket Booking of arrival to the applied country, Evidence of</li>
+                                <li>Hotel Booking Confirmation in the applied country, Evidence of</li>
+                                <li>Documentation to enter destination country, next destination on exiting the applied country</li>
+                                <li>Bank Statement (latest 3 months), Evidence of</li>
+                                <li>Others documents (give unlimited additional options)</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Card Footer -->
