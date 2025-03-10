@@ -317,9 +317,38 @@ $(document).ready(function() {
 
     // Change email value 
     $("#EmailAddress").on("input", function() {
-      $("#staticEmail").val($(this).val());
-      console.log("Email updated:", $(this).val());
-  });
+        $("#staticEmail").val($(this).val());
+    });
+
+    // Confirmation Fields
+    $("#familyName").on("input", function() {
+        $("#fmlyName").text($(this).val());
+    });
+    $("#givenName").on("input", function() {
+        $("#givnNames").text($(this).val());
+    });
+    $("#dateOfBirth").on("input", function() {
+        $("#dateOfBir").text($(this).val());
+    });
+    $('input[name="sexOptions"]').on("change", function() {
+        const selectedLabel = $('input[name="sexOptions"]:checked').next('label').text();
+        $("#appcntSex").text(selectedLabel);
+    });
+    $("#passportNumb").on("input", function() {
+        $("#passNumb").text($(this).val());
+    });
+
+    $('#CountryOfBirth').change(function() {
+        const selectedCountry = $(this).find('option:selected').text();
+        $('#CntryOfBir').text(selectedCountry);
+    });
+    $('#CountryOfBirth').trigger('change');
+
+    $('#countryofPassport').change(function() {
+        const selectedCountry = $(this).find('option:selected').text();
+        $('#ContryOfPass').text(selectedCountry);
+    });
+    $('#countryofPassport').trigger('change');
 
 });
 

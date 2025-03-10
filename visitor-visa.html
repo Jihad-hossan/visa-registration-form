@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Visa</title>
+    <title>Visitor Visa</title>
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    
     <section class="form-section">
         <div class="container d-flex justify-content-center" style="min-width:720px!important">
             <div class="col-11 col-offset-2">
@@ -17,22 +16,15 @@
             </div>
             <div class="card mt-3 form-card">
                 <form action="/action_page.php"></form>
-                <div class="card-header font-weight-bold"><h2 class="text-center">Student visa form</h2></div>
+                <div class="card-header font-weight-bold"><h2 class="text-center">Visitor visa form</h2></div>
                 
                 <div class="card-body step">
                     <div class="form-box">
-                        <h5 class="card-title font-weight-bold">Student Application Status</h5>
-                        <div class="form-group">
-                            <label for="applyWith">I am Applying:</label>
-                            <select class="form-control" id="applyWith" name="applyWith">
-                            <option value="" disabled selected>Please Select</option>
-                            <option>With Offer Letter</option>
-                            <option>for Fresh Student Visa</option>
-                            </select>
-                        </div>
+                        <h3 class="card-title font-weight-bold">Application context</h3>
                     </div>
                     <div class="form-box">
                         <h5 class="card-title font-weight-bold">Current location</h5>
+                        <p class="mb-0">Give details of the applicant's current location.</p>
                         <div class="multi-column">
                             <div class="form-group">
                                 <label for="country">Country:</label>      
@@ -304,123 +296,34 @@
                             <textarea class="form-control" id="otherStatus" rows="3"></textarea>
                         </div>
                     </div>
-                </div>
-                
-                <div class="card-body step" style="display: none">
                     <div class="form-box">
-                        <h5 class="card-title font-weight-bold">Application type</h5>
-                        <div class="form-group">
-                            <label for="firstTimeApplication">Is this the first time the applicant is applying for a student visa?</label>
-                            <select class="form-control" id="firstTimeApplication" name="firstTimeApplication">
-                                <option value="" disabled selected>Please Select</option>
-                                <option>Yes</option>
-                                <option>No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="applyForVisa">Is the applicant applying for this visa because their study in Australia has deferred due to COVID-19?</label>
-                            <select class="form-control" id="applyForVisa">
-                                <option value="" disabled selected>Please Select</option>
-                                <option>Yes</option>
-                                <option>No</option>
-                            </select>
+                        <h5 class="card-title font-weight-bold">Transit details</h5>
+                        <div class="multi-column">
+                            <div class="form-group">
+                                <label for="proposedArrivalDate">Proposed arrival date</label>
+                                <input type="date" class="form-control" id="proposedArrivalDate" name="proposedArrivalDate">
+                            </div>
+                            <div class="form-group">
+                                <label for="purposeOfVisitation">Purpose of Visitation:</label>
+                                <input type="text" class="form-control" id="purposeOfVisitation" name="purposeOfVisitation">
+                            </div>
                         </div>
                     </div>
                     <div class="form-box">
-                        <h5 class="card-title font-weight-bold">Confirmation of enrolment</h5>
                         <div class="form-group">
-                            <label for="hasCoE">Does the applicant hold a Confirmation of Enrolment (CoE) for any intended course of study in Australia?</label>
-                            <select class="form-control" id="hasCoE" name="hasCoE">
+                            <label for="willEnterLessThan90days">Will the applicant visiting or enter and depart the applying country in less than 3 months (90 days)?</label>
+                            <select class="form-control" id="willEnterLessThan90days" name="willEnterLessThan90days">
                                 <option value="" disabled selected>Please Select</option>
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
                             </select>
                         </div>
                     </div>
-                    <div class="form-box hasCoE-yes" style="display: none">
-                        <h5 class="card-title font-weight-bold">Confirmation of enrolment details</h5>
-                        <div id="hasCoE-details">
-                            <div class="CoE-entry">
-                                <input class="form-control" type="text" name="CoEName[]" placeholder="Name">
-                                <input class="form-control" type="text" name="CoEActions[]" placeholder="Actions">
-                                <button type="button" class="remove-entry btn">Remove</button>
-                            </div>
-                        </div>
-                        <button type="button" class="add-btn" id="add-CoE-details">Add</button>
-                    </div>
                 </div>
-                
                 <div class="card-body step" style="display: none">
                     <div class="form-box">
-                        <h5 class="card-title font-weight-bold">Other evidence of intended study</h5>
-                        <div class="form-group">
-                            <label for="hasNoCoE">Does the applicant hold evidence of their intended study in Australia other than a CoE?</label>
-                            <select class="form-control" id="hasNoCoE">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-box hasNoCoE-yes" style="display: none">
-                        <h5 class="card-title font-weight-bold">Other evidence of intended study</h5>
-                        <div id="other-evidence">
-                            <div class="Non-CoE-entry">
-                                <select class="form-control evidenceType">
-                                    <option value="" disabled selected>Please Select</option>
-                                    <option value="Letter of Offer ">Letter of Offer </option>
-                                    <option value="Advice Acceptance of Secondary Students">Advice Acceptance of Secondary Students</option>
-                                    <option value="Letter of Post Graduate Thesis Marking">Letter of Post Graduate Thesis Marking</option>
-                                    <option value="Department of Foreign Affairs and Trade letter of Support">Department of Foreign Affairs and Trade letter of Support</option>
-                                    <option value="Department of Defense letter of Support">Department of Defense letter of Support</option>
-                                </select>
-                                <input class="form-control" type="text" name="CourseName[]" placeholder="Course Name & Code">
-                                <input class="form-control" type="text" name="EducationProvider []" placeholder="Education Provider">
-                                <input class="form-control" type="date" name="CommencementDate[]" placeholder="Commencement Date">
-                                <input class="form-control" type="date" name="CompletionDate[]" placeholder="Completion Date">
-                                <button type="button" class="remove-entry btn">Remove</button>
-                            </div>
-                        </div>
-                        <button type="button" class="add-btn" id="add-other-evidence">Add Country</button>
-                        
-                        <div class="form-group">
-                            <label for="courseContinuation">Is this course a continuation of the applicant's studies or training outside Australia?</label>
-                            <select class="form-control" id="courseContinuation">
-                                <option value="" disabled selected>Please Select</option>
-                                <option>Yes</option>
-                                <option>No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-box">
-                        <h5 class="card-title font-weight-bold">Closure of education provider</h5>
-                        <div class="form-group">
-                            <label for="courseContinuation">Is the applicant applying for this visa due to the closure of their Australian education provider?</label>
-                            <select class="form-control" id="courseContinuation">
-                                <option value="" disabled selected>Please Select</option>
-                                <option>Yes</option>
-                                <option>No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-box">
-                        <h5 class="card-title font-weight-bold">Commonwealth funded student</h5>
-                        <div class="form-group">
-                            <label for="isFunding">Is the applicant receiving partial or full funding under a training scheme approved by the Commonwealth government of the applying country?</label>
-                            <select class="form-control" id="isFunding">
-                                <option value="" disabled selected>Please Select</option>
-                                <option>Yes</option>
-                                <option>No</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Primary Applicant -->
-                <div class="card-body step" style="display: none">
-                    <div class="form-box">
-                        <h3 class="section-title mb-0">Primary applicant</h3>
-                        <p class="mb-0"><strong>Information: Entering names incorrectly may result in denial of permission to board an aircraft to Applied Country, or result in delays in border processing on arrival to the Country, even if the applicant has been granted a visa.</strong></p>
+                        <h3 class="card-title font-weight-bold">Applicant</h3>
+                        <p class="mb-0">Information: Entering names incorrectly may result in denial of permission to board an aircraft to the applying country, or result in delays in border processing on arrival to the applying country, even if the applicant has been granted a visa.</p>
                     </div>
                     <div class="form-box">
                         <h5 class="card-title font-weight-bold">Passport details</h5>
@@ -981,8 +884,24 @@
                         <p class="info">It is strongly recommended that the passport be valid for at least six months.</p>
                     </div>
                 </div>
-             
+
+                <!-- Nid Info -->
                 <div class="card-body step" style="display: none">
+                    <div class="form-box">
+                        <h5 class="card-title font-weight-bold">Visa grant number for the applying country</h5>
+                        <div class="form-group">
+                            <label for="hasGrantNumber">Does this applicant have an Australian visa grant number?</label>
+                            <select class="form-control" id="hasGrantNumber" name="hasGrantNumber?">
+                                <option value="" disabled selected>Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group hasGrantNumber-yes" style="display: none;">
+                            <label for="GrantNumber">The visa grant number (if known):</label>
+                            <input type="text" class="form-control" id="GrantNumber">
+                        </div>
+                    </div>
                     <div class="form-box">
                         <h5 class="card-title font-weight-bold">National identity card</h5>
                         <div class="form-group">
@@ -994,6 +913,8 @@
                             </select>
                         </div>
                     </div>
+                </div>
+                <div class="card-body step" style="display: none">
                     <div class="form-box">
                         <h5 class="card-title font-weight-bold">Place of birth</h5>
                         <div class="multi-column-3">
@@ -1278,7 +1199,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card-body step" style="display: none">
                     <div class="form-box">
                         <h5 class="card-title font-weight-bold">Other names/spellings</h5>
@@ -1311,19 +1231,7 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card-body step" style="display: none">
-                    <div class="form-box">
-                        <h5 class="card-title font-weight-bold">Other passports</h5>
-                        <div class="form-group">
-                            <label for="hasOtherPassport">Does this applicant have other current passports?</label>
-                            <select class="form-control" id="hasOtherPassport" name="Applicant have other passports">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                    </div>
                     <div class="form-box">
                         <h5 class="card-title font-weight-bold">Other identity documents</h5>
                         <div class="form-group">
@@ -1348,48 +1256,26 @@
                     </div>
                 </div>
 
-                <!-- Additional identity questions -->
+                <!-- Critical data confirmation -->
                 <div class="card-body step" style="display: none">
                     <div class="form-box">
-                        <h3 class="section-title mb-0">Additional identity questions</h3>
-                        <p class="mb-0"><strong>Provide further details below, where available.</strong></p>
-                    </div>
-                    <div class="form-box">
-                        <h5 class="card-title font-weight-bold">Previous travel to Applied Country</h5>
+                        <h3 class="card-title font-weight-bold">Critical data confirmation</h3>
+                        <div class="confirmation-box">
+                            <p><strong>Family name:</strong> <span id="fmlyName">Please fill out</span> </p>
+                            <p><strong>Given names:</strong> <span id="givnNames">Please fill out</span> </p>
+                            <p><strong>Sex:</strong> <span id="appcntSex">Please select</span> </p>
+                            <p><strong>Date of birth:</strong> <span id="dateOfBir">Please fill out</span> </p>
+                            <p><strong>Country of birth:</strong> <span id="CntryOfBir">Please select</span> </p>
+                            <p><strong>Passport number:</strong> <span id="passNumb">Please fill out</span> </p>
+                            <p><strong>Country of passport:</strong> <span id="ContryOfPass">Please select</span> </p>
+                        </div>
                         <div class="form-group">
-                            <label for="isPreviouslyTravelled">Has this applicant previously travelled to Applied Country or previously applied for a visa?</label>
-                            <select class="form-control" id="isPreviouslyTravelled" name="is Previously Travelled applied country?">
+                            <label for="isTheAboveInfoCorrect">Is the above information correct?</label>
+                            <select class="form-control" id="isTheAboveInfoCorrect" name="isTheAboveInfoCorrect">
                                 <option value="" disabled selected>Please Select</option>
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
                             </select>
-                        </div>
-                    </div>
-                    <div class="form-box isPreviouslyTravelled-Yes" style="display: none;">
-                        <h5 class="card-title font-weight-bold">Previous passports</h5>
-                        <div class="form-group">
-                            <label for="hasPreviousPassportUsedInAUS">Does this applicant have previous passports that have been used to travel to Australia?</label>
-                            <select class="form-control" id="hasPreviousPassportUsedInAUS" name="hasPreviousPassportUsedInAUS">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-box">
-                        <h5 class="card-title font-weight-bold">Grant number</h5>
-                        <div class="form-group">
-                            <label for="hasGrantNumber">Does this applicant have an Australian visa grant number?</label>
-                            <select class="form-control" id="hasGrantNumber" name="hasGrantNumber?">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group hasGrantNumber-yes" style="display: none;">
-                            <label for="GrantNumber">The visa grant number (if known):</label>
-                            <input type="text" class="form-control" id="GrantNumber">
                         </div>
                     </div>
                 </div>
@@ -1939,7 +1825,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card-body step" style="display: none">
                     <div class="form-box">
                         <h5 class="card-title font-weight-bold">Contact telephone numbers</h5>
@@ -2923,478 +2808,331 @@
                     </div>
                 </div>
 
-                <!-- Genuine student -->
+                <!-- Visit details -->
                 <div class="card-body step" style="display: none">
                     <div class="form-box">
-                        <h3 class="card-title font-weight-bold">Genuine student</h3>
-                        <p class="mb-0">All student visa applicants are required to provide information in support of their application to demonstrate that they meet the Genuine Student criteria.</p>
-                        <p class="mb-0">Provide responses to support the applicant's ability to meet the criteria and ensure supporting documents are attached.</p>
-                        <div class="form-group">
-                            <label for="CurrentCircumstances">Give details of the applicant's current circumstances, including ties to family, community, employment and economic circumstances.</label>
-                            <textarea class="form-control" id="CurrentCircumstances" rows="3" placeholder="Enter your message here..."></textarea>
+                        <h3 class="card-title font-weight-bold">Visit details</h3>
+                        <h5 class="card-title font-weight-bold">Arrival details</h5>
+                        <p class="mb-0">Give details of the applicant's planned flight to the applying country.</p>
+                        <div class="multi-column">
+                            <div class="form-group">
+                                <label for="arrivalDate">Arrival date:</label>
+                                <input type="date" class="form-control" id="arrivalDate" name="arrivalDate">
+                            </div>
+                            <div class="form-group">
+                                <label for="whereTravelWillCommence">Country where travel will commence:</label>
+                                <select id="whereTravelWillCommence" name="whereTravelWillCommence" class="form-control">
+                                    <option value="" disabled selected>Please Select</option>
+                                    <option value="Afghanistan">Afghanistan</option>
+                                    <option value="Åland Islands">Åland Islands</option>
+                                    <option value="Albania">Albania</option>
+                                    <option value="Algeria">Algeria</option>
+                                    <option value="American Samoa">American Samoa</option>
+                                    <option value="Andorra">Andorra</option>
+                                    <option value="Angola">Angola</option>
+                                    <option value="Anguilla">Anguilla</option>
+                                    <option value="Antarctica">Antarctica</option>
+                                    <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                                    <option value="Argentina">Argentina</option>
+                                    <option value="Armenia">Armenia</option>
+                                    <option value="Aruba">Aruba</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="Austria">Austria</option>
+                                    <option value="Azerbaijan">Azerbaijan</option>
+                                    <option value="Bahamas">Bahamas</option>
+                                    <option value="Bahrain">Bahrain</option>
+                                    <option value="Bangladesh">Bangladesh</option>
+                                    <option value="Barbados">Barbados</option>
+                                    <option value="Belarus">Belarus</option>
+                                    <option value="Belgium">Belgium</option>
+                                    <option value="Belize">Belize</option>
+                                    <option value="Benin">Benin</option>
+                                    <option value="Bermuda">Bermuda</option>
+                                    <option value="Bhutan">Bhutan</option>
+                                    <option value="Bolivia">Bolivia</option>
+                                    <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                                    <option value="Botswana">Botswana</option>
+                                    <option value="Bouvet Island">Bouvet Island</option>
+                                    <option value="Brazil">Brazil</option>
+                                    <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                                    <option value="Brunei Darussalam">Brunei Darussalam</option>
+                                    <option value="Bulgaria">Bulgaria</option>
+                                    <option value="Burkina Faso">Burkina Faso</option>
+                                    <option value="Burundi">Burundi</option>
+                                    <option value="Cambodia">Cambodia</option>
+                                    <option value="Cameroon">Cameroon</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="Cape Verde">Cape Verde</option>
+                                    <option value="Cayman Islands">Cayman Islands</option>
+                                    <option value="Central African Republic">Central African Republic</option>
+                                    <option value="Chad">Chad</option>
+                                    <option value="Chile">Chile</option>
+                                    <option value="China">China</option>
+                                    <option value="Christmas Island">Christmas Island</option>
+                                    <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+                                    <option value="Colombia">Colombia</option>
+                                    <option value="Comoros">Comoros</option>
+                                    <option value="Congo">Congo</option>
+                                    <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+                                    <option value="Cook Islands">Cook Islands</option>
+                                    <option value="Costa Rica">Costa Rica</option>
+                                    <option value="Cote D'ivoire">Cote D'ivoire</option>
+                                    <option value="Croatia">Croatia</option>
+                                    <option value="Cuba">Cuba</option>
+                                    <option value="Cyprus">Cyprus</option>
+                                    <option value="Czech Republic">Czech Republic</option>
+                                    <option value="Denmark">Denmark</option>
+                                    <option value="Djibouti">Djibouti</option>
+                                    <option value="Dominica">Dominica</option>
+                                    <option value="Dominican Republic">Dominican Republic</option>
+                                    <option value="Ecuador">Ecuador</option>
+                                    <option value="Egypt">Egypt</option>
+                                    <option value="El Salvador">El Salvador</option>
+                                    <option value="Equatorial Guinea">Equatorial Guinea</option>
+                                    <option value="Eritrea">Eritrea</option>
+                                    <option value="Estonia">Estonia</option>
+                                    <option value="Ethiopia">Ethiopia</option>
+                                    <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+                                    <option value="Faroe Islands">Faroe Islands</option>
+                                    <option value="Fiji">Fiji</option>
+                                    <option value="Finland">Finland</option>
+                                    <option value="France">France</option>
+                                    <option value="French Guiana">French Guiana</option>
+                                    <option value="French Polynesia">French Polynesia</option>
+                                    <option value="French Southern Territories">French Southern Territories</option>
+                                    <option value="Gabon">Gabon</option>
+                                    <option value="Gambia">Gambia</option>
+                                    <option value="Georgia">Georgia</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="Ghana">Ghana</option>
+                                    <option value="Gibraltar">Gibraltar</option>
+                                    <option value="Greece">Greece</option>
+                                    <option value="Greenland">Greenland</option>
+                                    <option value="Grenada">Grenada</option>
+                                    <option value="Guadeloupe">Guadeloupe</option>
+                                    <option value="Guam">Guam</option>
+                                    <option value="Guatemala">Guatemala</option>
+                                    <option value="Guernsey">Guernsey</option>
+                                    <option value="Guinea">Guinea</option>
+                                    <option value="Guinea-bissau">Guinea-bissau</option>
+                                    <option value="Guyana">Guyana</option>
+                                    <option value="Haiti">Haiti</option>
+                                    <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+                                    <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+                                    <option value="Honduras">Honduras</option>
+                                    <option value="Hong Kong">Hong Kong</option>
+                                    <option value="Hungary">Hungary</option>
+                                    <option value="Iceland">Iceland</option>
+                                    <option value="India">India</option>
+                                    <option value="Indonesia">Indonesia</option>
+                                    <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+                                    <option value="Iraq">Iraq</option>
+                                    <option value="Ireland">Ireland</option>
+                                    <option value="Isle of Man">Isle of Man</option>
+                                    <option value="Israel">Israel</option>
+                                    <option value="Italy">Italy</option>
+                                    <option value="Jamaica">Jamaica</option>
+                                    <option value="Japan">Japan</option>
+                                    <option value="Jersey">Jersey</option>
+                                    <option value="Jordan">Jordan</option>
+                                    <option value="Kazakhstan">Kazakhstan</option>
+                                    <option value="Kenya">Kenya</option>
+                                    <option value="Kiribati">Kiribati</option>
+                                    <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+                                    <option value="Korea, Republic of">Korea, Republic of</option>
+                                    <option value="Kuwait">Kuwait</option>
+                                    <option value="Kyrgyzstan">Kyrgyzstan</option>
+                                    <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+                                    <option value="Latvia">Latvia</option>
+                                    <option value="Lebanon">Lebanon</option>
+                                    <option value="Lesotho">Lesotho</option>
+                                    <option value="Liberia">Liberia</option>
+                                    <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+                                    <option value="Liechtenstein">Liechtenstein</option>
+                                    <option value="Lithuania">Lithuania</option>
+                                    <option value="Luxembourg">Luxembourg</option>
+                                    <option value="Macao">Macao</option>
+                                    <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+                                    <option value="Madagascar">Madagascar</option>
+                                    <option value="Malawi">Malawi</option>
+                                    <option value="Malaysia">Malaysia</option>
+                                    <option value="Maldives">Maldives</option>
+                                    <option value="Mali">Mali</option>
+                                    <option value="Malta">Malta</option>
+                                    <option value="Marshall Islands">Marshall Islands</option>
+                                    <option value="Martinique">Martinique</option>
+                                    <option value="Mauritania">Mauritania</option>
+                                    <option value="Mauritius">Mauritius</option>
+                                    <option value="Mayotte">Mayotte</option>
+                                    <option value="Mexico">Mexico</option>
+                                    <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+                                    <option value="Moldova, Republic of">Moldova, Republic of</option>
+                                    <option value="Monaco">Monaco</option>
+                                    <option value="Mongolia">Mongolia</option>
+                                    <option value="Montenegro">Montenegro</option>
+                                    <option value="Montserrat">Montserrat</option>
+                                    <option value="Morocco">Morocco</option>
+                                    <option value="Mozambique">Mozambique</option>
+                                    <option value="Myanmar">Myanmar</option>
+                                    <option value="Namibia">Namibia</option>
+                                    <option value="Nauru">Nauru</option>
+                                    <option value="Nepal">Nepal</option>
+                                    <option value="Netherlands">Netherlands</option>
+                                    <option value="Netherlands Antilles">Netherlands Antilles</option>
+                                    <option value="New Caledonia">New Caledonia</option>
+                                    <option value="New Zealand">New Zealand</option>
+                                    <option value="Nicaragua">Nicaragua</option>
+                                    <option value="Niger">Niger</option>
+                                    <option value="Nigeria">Nigeria</option>
+                                    <option value="Niue">Niue</option>
+                                    <option value="Norfolk Island">Norfolk Island</option>
+                                    <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                                    <option value="Norway">Norway</option>
+                                    <option value="Oman">Oman</option>
+                                    <option value="Pakistan">Pakistan</option>
+                                    <option value="Palau">Palau</option>
+                                    <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+                                    <option value="Panama">Panama</option>
+                                    <option value="Papua New Guinea">Papua New Guinea</option>
+                                    <option value="Paraguay">Paraguay</option>
+                                    <option value="Peru">Peru</option>
+                                    <option value="Philippines">Philippines</option>
+                                    <option value="Pitcairn">Pitcairn</option>
+                                    <option value="Poland">Poland</option>
+                                    <option value="Portugal">Portugal</option>
+                                    <option value="Puerto Rico">Puerto Rico</option>
+                                    <option value="Qatar">Qatar</option>
+                                    <option value="Reunion">Reunion</option>
+                                    <option value="Romania">Romania</option>
+                                    <option value="Russian Federation">Russian Federation</option>
+                                    <option value="Rwanda">Rwanda</option>
+                                    <option value="Saint Helena">Saint Helena</option>
+                                    <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                                    <option value="Saint Lucia">Saint Lucia</option>
+                                    <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+                                    <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
+                                    <option value="Samoa">Samoa</option>
+                                    <option value="San Marino">San Marino</option>
+                                    <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                                    <option value="Saudi Arabia">Saudi Arabia</option>
+                                    <option value="Senegal">Senegal</option>
+                                    <option value="Serbia">Serbia</option>
+                                    <option value="Seychelles">Seychelles</option>
+                                    <option value="Sierra Leone">Sierra Leone</option>
+                                    <option value="Singapore">Singapore</option>
+                                    <option value="Slovakia">Slovakia</option>
+                                    <option value="Slovenia">Slovenia</option>
+                                    <option value="Solomon Islands">Solomon Islands</option>
+                                    <option value="Somalia">Somalia</option>
+                                    <option value="South Africa">South Africa</option>
+                                    <option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
+                                    <option value="Spain">Spain</option>
+                                    <option value="Sri Lanka">Sri Lanka</option>
+                                    <option value="Sudan">Sudan</option>
+                                    <option value="Suriname">Suriname</option>
+                                    <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+                                    <option value="Swaziland">Swaziland</option>
+                                    <option value="Sweden">Sweden</option>
+                                    <option value="Switzerland">Switzerland</option>
+                                    <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+                                    <option value="Taiwan">Taiwan</option>
+                                    <option value="Tajikistan">Tajikistan</option>
+                                    <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+                                    <option value="Thailand">Thailand</option>
+                                    <option value="Timor-leste">Timor-leste</option>
+                                    <option value="Togo">Togo</option>
+                                    <option value="Tokelau">Tokelau</option>
+                                    <option value="Tonga">Tonga</option>
+                                    <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                                    <option value="Tunisia">Tunisia</option>
+                                    <option value="Turkey">Turkey</option>
+                                    <option value="Turkmenistan">Turkmenistan</option>
+                                    <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+                                    <option value="Tuvalu">Tuvalu</option>
+                                    <option value="Uganda">Uganda</option>
+                                    <option value="Ukraine">Ukraine</option>
+                                    <option value="United Arab Emirates">United Arab Emirates</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="United States">United States</option>
+                                    <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+                                    <option value="Uruguay">Uruguay</option>
+                                    <option value="Uzbekistan">Uzbekistan</option>
+                                    <option value="Vanuatu">Vanuatu</option>
+                                    <option value="Venezuela">Venezuela</option>
+                                    <option value="Viet Nam">Viet Nam</option>
+                                    <option value="Virgin Islands, British">Virgin Islands, British</option>
+                                    <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+                                    <option value="Wallis and Futuna">Wallis and Futuna</option>
+                                    <option value="Western Sahara">Western Sahara</option>
+                                    <option value="Yemen">Yemen</option>
+                                    <option value="Zambia">Zambia</option>
+                                    <option value="Zimbabwe">Zimbabwe</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="whyApplicantWishes">Explain why the applicant wishes to study this course in Applied Country with this particular education provider including their understanding of the requirements of the intended course and studying and living in Applied Country.</label>
-                            <textarea class="form-control" id="whyApplicantWishes" rows="3" placeholder="Enter your message here..."></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="explainHow">Explain how completing the course will be of benefit to the applicant.</label>
-                            <textarea class="form-control" id="explainHow" rows="3" placeholder="Enter your message here..."></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="otherRelevantInformation">Give details of any other relevant information the applicant would like to include.</label>
-                            <textarea class="form-control" id="otherRelevantInformation" rows="3" placeholder="Enter your message here..."></textarea>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Funding for stay -->
-                <div class="card-body step" style="display: none">
-                    <div class="form-box">
-                        <h3 class="card-title font-weight-bold">Funding for stay</h3>
-                        <div class="form-group">
-                            <label for="hasSufficientFunds">Do all applicants in this application confirm that they each have access to sufficient funds to support themselves for the total period of stay in the applied Country and understand that further evidence of funds may also be requested?</label>
-                            <select class="form-control" id="hasSufficientFunds" name="hasSufficientFunds">
+                            <label for="willHaveTransit">Will the applicant transit through any other countries on the way to the applying country?</label>
+                            <select class="form-control" id="willHaveTransit" name="willHaveTransit">
                                 <option value="" disabled selected>Please Select</option>
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="howApplicantsSupportThemeself">Show how each applicant included in the application will support themselves in the applied country to meet living, tuition and school costs. Select any that apply.</label>
-                            <textarea class="form-control" id="howApplicantsSupportThemeself" rows="3" placeholder="Enter the details here as to how the applicant will suffice funds for tuition, school costs, and meet living expenses"></textarea>
-                        </div>
                     </div>
-                </div>
-
-                <!-- Health insurance -->
-                <div class="card-body step" style="display: none">
                     <div class="form-box">
-                        <h3 class="card-title font-weight-bold">Health insurance</h3>
-                        <p class="mb-0">Overseas Student Health Cover</p>
-                        <h5 class="card-title font-weight-bold">Overseas Student Health Cover</h5>
-                        <div class="form-group">
-                            <label for="hasOSHC">Does the applicant have Overseas Student Health Cover (OSHC)? </label>
-                            <select class="form-control" id="hasOSHC" name="hasOSHC">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-box hasOSHC-yes" style="display: none">
-                        <div class="form-group">
-                            <label for="hasOSHCOrganisdByEduProvider">Was the Overseas Student Health Cover (OSHC) organised by the applicant's education provider?</label>
-                            <select class="form-control" id="hasOSHCOrganisdByEduProvider" name="hasOSHCOrganisdByEduProvider">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
+                        <div class="multi-column">
+                            <div class="form-group">
+                                <label for="lastAirportBeforeTransiting">Last city/airport before transiting the applying country:</label>
+                                <input type="text" class="form-control" id="lastAirportBeforeTransiting" name="lastAirportBeforeTransiting">
+                            </div>
+                            <div class="form-group">
+                                <label for="nameOfIncomingAirline">Name of incoming airline:</label>
+                                <input type="text" class="form-control" id="nameOfIncomingAirline" name="nameOfIncomingAirline">
+                            </div>
                         </div>
                         <div class="multi-column">
                             <div class="form-group">
-                                <label for="NameOfHealthInsurer">Name of health insurer</label>
-                                <input type="text" class="form-control" id="NameOfHealthInsurer" name="NameOfHealthInsurer">
+                                <label for="incomingFlightNumber">Incoming flight number:</label>
+                                <input type="text" class="form-control" id="incomingFlightNumber" name="incomingFlightNumber">
                             </div>
                             <div class="form-group">
-                                <label for="InsurancePolicyNumber">Insurance policy number</label>
-                                <input type="number" class="form-control" id="InsurancePolicyNumber" name="InsurancePolicyNumber">
+                                <label for="cityOfArrivalCountry">City/airport of arrival in the applying country:</label>
+                                <input type="text" class="form-control" id="cityOfArrivalCountry" name="cityOfArrivalCountry">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Departure details -->
+                <div class="card-body step" style="display: none">
+                    <div class="form-box">
+                        <h5 class="card-title font-weight-bold">Departure details</h5>
+                        <p class="mb-0">Give details of the applicant's intended departure from the applied country.</p>
+                        <div class="multi-column">
+                            <div class="form-group">
+                                <label for="departureDate">Departure date from the applied country:</label>
+                                <input type="date" class="form-control" id="departureDate" name="departureDate">
+                            </div>
+                            <div class="form-group">
+                                <label for="cityOfDeparture">City/airport of departure from the applied country:</label>
+                                <input type="date" class="form-control" id="cityOfDeparture" name="cityOfDeparture">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-box">
+                        <div class="multi-column">
+                            <div class="form-group">
+                                <label for="nameOfOngoingAirline">Name of outgoing airline:</label>
+                                <input type="text" class="form-control" id="nameOfOngoingAirline" name="nameOfOngoingAirline">
+                            </div>
+                            <div class="form-group">
+                                <label for="outgoingFlightNumber">Outgoing flight number:</label>
+                                <input type="text" class="form-control" id="outgoingFlightNumber" name="outgoingFlightNumber">
                             </div>
                         </div>
                         <div class="multi-column">
                             <div class="form-group">
-                                <label for="DateFrom">Date From</label>
-                                <input type="date" class="form-control" id="DateFrom" name="DateFrom">
-                            </div>
-                            <div class="form-group">
-                                <label for="DateTo">Date to</label>
-                                <input type="date" class="form-control" id="DateTo" name="DateTo">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Education -->
-                <div class="card-body step" style="display: none">
-                    <div class="form-box">
-                        <h3 class="card-title font-weight-bold">Education</h3>
-                        <h5 class="card-title font-weight-bold">Highest level of schooling</h5>
-                        <p class="mb-0">Give details of the applicant's highest level of schooling completed outside AppliedCountry.</p>
-                        <div class="form-group">
-                            <label for="HighestLevelOfSchooling">Highest level of schooling completed:</label>
-                            <select class="form-control" id="HighestLevelOfSchooling" name="HighestLevelOfSchooling">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="1">Primary School</option>
-                                <option value="2">Secondary School – Year 11 or lower or equivalent</option>
-                                <option value="3">Secondary School – Year 12 or equivalent</option>
-                                <option value="4">SVocational Qualification – advance diploma or equivalent</option>
-                                <option value="5">Vocational Qualification – Diploma or equivalent</option>
-                                <option value="6">Vocational Qualification – Cert I, II, III or IV or equivalent</option>
-                                <option value="7">Bachelors Degree (including honors) or equivalent</option>
-                                <option value="8">Postgraduate diploma or certificate or equivalent</option>
-                                <option value="9">Master Degree or equivalent</option>
-                                <option value="10">Doctoral Degree or equivalent</option>
-                                <option value="11">Not Completed any schooling</option>
-                                <option value="12">Other</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-box HighestLevelOfSchooling-yes" style="display: none">
-                        <div class="multi-column-3">
-                            <div class="form-group">
-                                <label for="CourseName">Course name</label>
-                                <input type="text" class="form-control" id="CourseName" name="CourseName">
-                            </div>
-                            <div class="form-group">
-                                <label for="InstitutionName">Institution name</label>
-                                <input type="text" class="form-control" id="InstitutionName" name="InstitutionName">
-                            </div>
-                            <div class="form-group">
-                                <label for="CountryOfInstitution">Country of institution</label>      
-                                <select id="CountryOfInstitution" name="CountryOfInstitution" class="form-control">
-                                    <option value="" disabled selected>Please Select</option>
-                                    <option value="Afghanistan">Afghanistan</option>
-                                    <option value="Åland Islands">Åland Islands</option>
-                                    <option value="Albania">Albania</option>
-                                    <option value="Algeria">Algeria</option>
-                                    <option value="American Samoa">American Samoa</option>
-                                    <option value="Andorra">Andorra</option>
-                                    <option value="Angola">Angola</option>
-                                    <option value="Anguilla">Anguilla</option>
-                                    <option value="Antarctica">Antarctica</option>
-                                    <option value="Antigua and Barbuda">Antigua and Barbuda</option>
-                                    <option value="Argentina">Argentina</option>
-                                    <option value="Armenia">Armenia</option>
-                                    <option value="Aruba">Aruba</option>
-                                    <option value="Australia">Australia</option>
-                                    <option value="Austria">Austria</option>
-                                    <option value="Azerbaijan">Azerbaijan</option>
-                                    <option value="Bahamas">Bahamas</option>
-                                    <option value="Bahrain">Bahrain</option>
-                                    <option value="Bangladesh">Bangladesh</option>
-                                    <option value="Barbados">Barbados</option>
-                                    <option value="Belarus">Belarus</option>
-                                    <option value="Belgium">Belgium</option>
-                                    <option value="Belize">Belize</option>
-                                    <option value="Benin">Benin</option>
-                                    <option value="Bermuda">Bermuda</option>
-                                    <option value="Bhutan">Bhutan</option>
-                                    <option value="Bolivia">Bolivia</option>
-                                    <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
-                                    <option value="Botswana">Botswana</option>
-                                    <option value="Bouvet Island">Bouvet Island</option>
-                                    <option value="Brazil">Brazil</option>
-                                    <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
-                                    <option value="Brunei Darussalam">Brunei Darussalam</option>
-                                    <option value="Bulgaria">Bulgaria</option>
-                                    <option value="Burkina Faso">Burkina Faso</option>
-                                    <option value="Burundi">Burundi</option>
-                                    <option value="Cambodia">Cambodia</option>
-                                    <option value="Cameroon">Cameroon</option>
-                                    <option value="Canada">Canada</option>
-                                    <option value="Cape Verde">Cape Verde</option>
-                                    <option value="Cayman Islands">Cayman Islands</option>
-                                    <option value="Central African Republic">Central African Republic</option>
-                                    <option value="Chad">Chad</option>
-                                    <option value="Chile">Chile</option>
-                                    <option value="China">China</option>
-                                    <option value="Christmas Island">Christmas Island</option>
-                                    <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
-                                    <option value="Colombia">Colombia</option>
-                                    <option value="Comoros">Comoros</option>
-                                    <option value="Congo">Congo</option>
-                                    <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
-                                    <option value="Cook Islands">Cook Islands</option>
-                                    <option value="Costa Rica">Costa Rica</option>
-                                    <option value="Cote D'ivoire">Cote D'ivoire</option>
-                                    <option value="Croatia">Croatia</option>
-                                    <option value="Cuba">Cuba</option>
-                                    <option value="Cyprus">Cyprus</option>
-                                    <option value="Czech Republic">Czech Republic</option>
-                                    <option value="Denmark">Denmark</option>
-                                    <option value="Djibouti">Djibouti</option>
-                                    <option value="Dominica">Dominica</option>
-                                    <option value="Dominican Republic">Dominican Republic</option>
-                                    <option value="Ecuador">Ecuador</option>
-                                    <option value="Egypt">Egypt</option>
-                                    <option value="El Salvador">El Salvador</option>
-                                    <option value="Equatorial Guinea">Equatorial Guinea</option>
-                                    <option value="Eritrea">Eritrea</option>
-                                    <option value="Estonia">Estonia</option>
-                                    <option value="Ethiopia">Ethiopia</option>
-                                    <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
-                                    <option value="Faroe Islands">Faroe Islands</option>
-                                    <option value="Fiji">Fiji</option>
-                                    <option value="Finland">Finland</option>
-                                    <option value="France">France</option>
-                                    <option value="French Guiana">French Guiana</option>
-                                    <option value="French Polynesia">French Polynesia</option>
-                                    <option value="French Southern Territories">French Southern Territories</option>
-                                    <option value="Gabon">Gabon</option>
-                                    <option value="Gambia">Gambia</option>
-                                    <option value="Georgia">Georgia</option>
-                                    <option value="Germany">Germany</option>
-                                    <option value="Ghana">Ghana</option>
-                                    <option value="Gibraltar">Gibraltar</option>
-                                    <option value="Greece">Greece</option>
-                                    <option value="Greenland">Greenland</option>
-                                    <option value="Grenada">Grenada</option>
-                                    <option value="Guadeloupe">Guadeloupe</option>
-                                    <option value="Guam">Guam</option>
-                                    <option value="Guatemala">Guatemala</option>
-                                    <option value="Guernsey">Guernsey</option>
-                                    <option value="Guinea">Guinea</option>
-                                    <option value="Guinea-bissau">Guinea-bissau</option>
-                                    <option value="Guyana">Guyana</option>
-                                    <option value="Haiti">Haiti</option>
-                                    <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
-                                    <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
-                                    <option value="Honduras">Honduras</option>
-                                    <option value="Hong Kong">Hong Kong</option>
-                                    <option value="Hungary">Hungary</option>
-                                    <option value="Iceland">Iceland</option>
-                                    <option value="India">India</option>
-                                    <option value="Indonesia">Indonesia</option>
-                                    <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
-                                    <option value="Iraq">Iraq</option>
-                                    <option value="Ireland">Ireland</option>
-                                    <option value="Isle of Man">Isle of Man</option>
-                                    <option value="Israel">Israel</option>
-                                    <option value="Italy">Italy</option>
-                                    <option value="Jamaica">Jamaica</option>
-                                    <option value="Japan">Japan</option>
-                                    <option value="Jersey">Jersey</option>
-                                    <option value="Jordan">Jordan</option>
-                                    <option value="Kazakhstan">Kazakhstan</option>
-                                    <option value="Kenya">Kenya</option>
-                                    <option value="Kiribati">Kiribati</option>
-                                    <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
-                                    <option value="Korea, Republic of">Korea, Republic of</option>
-                                    <option value="Kuwait">Kuwait</option>
-                                    <option value="Kyrgyzstan">Kyrgyzstan</option>
-                                    <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
-                                    <option value="Latvia">Latvia</option>
-                                    <option value="Lebanon">Lebanon</option>
-                                    <option value="Lesotho">Lesotho</option>
-                                    <option value="Liberia">Liberia</option>
-                                    <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
-                                    <option value="Liechtenstein">Liechtenstein</option>
-                                    <option value="Lithuania">Lithuania</option>
-                                    <option value="Luxembourg">Luxembourg</option>
-                                    <option value="Macao">Macao</option>
-                                    <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
-                                    <option value="Madagascar">Madagascar</option>
-                                    <option value="Malawi">Malawi</option>
-                                    <option value="Malaysia">Malaysia</option>
-                                    <option value="Maldives">Maldives</option>
-                                    <option value="Mali">Mali</option>
-                                    <option value="Malta">Malta</option>
-                                    <option value="Marshall Islands">Marshall Islands</option>
-                                    <option value="Martinique">Martinique</option>
-                                    <option value="Mauritania">Mauritania</option>
-                                    <option value="Mauritius">Mauritius</option>
-                                    <option value="Mayotte">Mayotte</option>
-                                    <option value="Mexico">Mexico</option>
-                                    <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
-                                    <option value="Moldova, Republic of">Moldova, Republic of</option>
-                                    <option value="Monaco">Monaco</option>
-                                    <option value="Mongolia">Mongolia</option>
-                                    <option value="Montenegro">Montenegro</option>
-                                    <option value="Montserrat">Montserrat</option>
-                                    <option value="Morocco">Morocco</option>
-                                    <option value="Mozambique">Mozambique</option>
-                                    <option value="Myanmar">Myanmar</option>
-                                    <option value="Namibia">Namibia</option>
-                                    <option value="Nauru">Nauru</option>
-                                    <option value="Nepal">Nepal</option>
-                                    <option value="Netherlands">Netherlands</option>
-                                    <option value="Netherlands Antilles">Netherlands Antilles</option>
-                                    <option value="New Caledonia">New Caledonia</option>
-                                    <option value="New Zealand">New Zealand</option>
-                                    <option value="Nicaragua">Nicaragua</option>
-                                    <option value="Niger">Niger</option>
-                                    <option value="Nigeria">Nigeria</option>
-                                    <option value="Niue">Niue</option>
-                                    <option value="Norfolk Island">Norfolk Island</option>
-                                    <option value="Northern Mariana Islands">Northern Mariana Islands</option>
-                                    <option value="Norway">Norway</option>
-                                    <option value="Oman">Oman</option>
-                                    <option value="Pakistan">Pakistan</option>
-                                    <option value="Palau">Palau</option>
-                                    <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
-                                    <option value="Panama">Panama</option>
-                                    <option value="Papua New Guinea">Papua New Guinea</option>
-                                    <option value="Paraguay">Paraguay</option>
-                                    <option value="Peru">Peru</option>
-                                    <option value="Philippines">Philippines</option>
-                                    <option value="Pitcairn">Pitcairn</option>
-                                    <option value="Poland">Poland</option>
-                                    <option value="Portugal">Portugal</option>
-                                    <option value="Puerto Rico">Puerto Rico</option>
-                                    <option value="Qatar">Qatar</option>
-                                    <option value="Reunion">Reunion</option>
-                                    <option value="Romania">Romania</option>
-                                    <option value="Russian Federation">Russian Federation</option>
-                                    <option value="Rwanda">Rwanda</option>
-                                    <option value="Saint Helena">Saint Helena</option>
-                                    <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
-                                    <option value="Saint Lucia">Saint Lucia</option>
-                                    <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
-                                    <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
-                                    <option value="Samoa">Samoa</option>
-                                    <option value="San Marino">San Marino</option>
-                                    <option value="Sao Tome and Principe">Sao Tome and Principe</option>
-                                    <option value="Saudi Arabia">Saudi Arabia</option>
-                                    <option value="Senegal">Senegal</option>
-                                    <option value="Serbia">Serbia</option>
-                                    <option value="Seychelles">Seychelles</option>
-                                    <option value="Sierra Leone">Sierra Leone</option>
-                                    <option value="Singapore">Singapore</option>
-                                    <option value="Slovakia">Slovakia</option>
-                                    <option value="Slovenia">Slovenia</option>
-                                    <option value="Solomon Islands">Solomon Islands</option>
-                                    <option value="Somalia">Somalia</option>
-                                    <option value="South Africa">South Africa</option>
-                                    <option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
-                                    <option value="Spain">Spain</option>
-                                    <option value="Sri Lanka">Sri Lanka</option>
-                                    <option value="Sudan">Sudan</option>
-                                    <option value="Suriname">Suriname</option>
-                                    <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
-                                    <option value="Swaziland">Swaziland</option>
-                                    <option value="Sweden">Sweden</option>
-                                    <option value="Switzerland">Switzerland</option>
-                                    <option value="Syrian Arab Republic">Syrian Arab Republic</option>
-                                    <option value="Taiwan">Taiwan</option>
-                                    <option value="Tajikistan">Tajikistan</option>
-                                    <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
-                                    <option value="Thailand">Thailand</option>
-                                    <option value="Timor-leste">Timor-leste</option>
-                                    <option value="Togo">Togo</option>
-                                    <option value="Tokelau">Tokelau</option>
-                                    <option value="Tonga">Tonga</option>
-                                    <option value="Trinidad and Tobago">Trinidad and Tobago</option>
-                                    <option value="Tunisia">Tunisia</option>
-                                    <option value="Turkey">Turkey</option>
-                                    <option value="Turkmenistan">Turkmenistan</option>
-                                    <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
-                                    <option value="Tuvalu">Tuvalu</option>
-                                    <option value="Uganda">Uganda</option>
-                                    <option value="Ukraine">Ukraine</option>
-                                    <option value="United Arab Emirates">United Arab Emirates</option>
-                                    <option value="United Kingdom">United Kingdom</option>
-                                    <option value="United States">United States</option>
-                                    <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
-                                    <option value="Uruguay">Uruguay</option>
-                                    <option value="Uzbekistan">Uzbekistan</option>
-                                    <option value="Vanuatu">Vanuatu</option>
-                                    <option value="Venezuela">Venezuela</option>
-                                    <option value="Viet Nam">Viet Nam</option>
-                                    <option value="Virgin Islands, British">Virgin Islands, British</option>
-                                    <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
-                                    <option value="Wallis and Futuna">Wallis and Futuna</option>
-                                    <option value="Western Sahara">Western Sahara</option>
-                                    <option value="Yemen">Yemen</option>
-                                    <option value="Zambia">Zambia</option>
-                                    <option value="Zimbabwe">Zimbabwe</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-box HighestLevelOfSchooling-other" style="display: none">
-                        <div class="form-group">
-                            <label for="otherStatus">Give details:</label>
-                            <textarea class="form-control" id="otherStatus" rows="3"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body step" style="display: none">
-                    <div class="form-box">
-                        <h5 class="card-title font-weight-bold">Education history</h5>
-                        <div class="form-group">
-                            <label for="isEnrollledOtherCountry">Has the applicant completed, or is currently enrolled in any other studies or training outside the applied country?</label>
-                            <select class="form-control" id="isEnrollledOtherCountry" name="isEnrollledOtherCountry">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-box isEnrollledOtherCountry-yes" style="display: none">
-                        <h5 class="card-title font-weight-bold">Add details</h5>
-                        <div id="education-history">
-                            <div class="education-entry">
-                                <input class="form-control" type="text" name="certification[]" placeholder="Certification">
-                                <input class="form-control" type="text" name="institution[]" placeholder="Institution name">
-                                <input class="form-control" type="text" name="course[]" placeholder="Course name">
-                                <input class="form-control" type="date" name="date_from[]">
-                                <input class="form-control" type="date" name="date_to[]">
-                                <button type="button" class="remove-entry btn">Remove</button>
-                            </div>
-                        </div>
-                        <button type="button" class="add-btn" id="add-education-entry">Add Education Entry</button>
-                    </div>
-                    <div class="form-box">
-                        <div class="form-group">
-                            <label for="hasStudiedInAUS">Has the applicant previously studied in Australia?</label>
-                            <select class="form-control" id="hasStudiedInAUS" name="hasStudiedInAUS">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-box hasStudiedInAUS-yes" style="display: none">
-                        <h5 class="card-title font-weight-bold">Add details</h5>
-                        <div id="AUS-education-history">
-                            <div class="education-entry">
-                                <input class="form-control" type="text" name="certification[]" placeholder="Certification">
-                                <input class="form-control" type="text" name="institution[]" placeholder="Institution name">
-                                <input class="form-control" type="text" name="course[]" placeholder="Course name">
-                                <input class="form-control" type="date" name="date_from[]">
-                                <input class="form-control" type="date" name="date_to[]">
-                                <button type="button" class="remove-entry btn">Remove</button>
-                            </div>
-                        </div>
-                        <button type="button" class="add-btn" id="AUS-add-education-entry">Add Education Entry</button>
-                    </div>
-                </div>
-
-                <!-- Language -->
-                <div class="card-body step" style="display: none">
-                    <div class="form-box">
-                        <h3 class="card-title font-weight-bold">Language</h3>
-                        <h5 class="card-title font-weight-bold">Language ability</h5>
-                        <div class="form-group">
-                            <label for="hasTakenENTest">Has the applicant undertaken an English language test within the last 24 months?</label>
-                            <select class="form-control" id="hasTakenENTest" name="hasTakenENTest">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-box hasTakenENTest-yes" style="display: none">
-                        <h5 class="card-title font-weight-bold">English test details</h5>
-                        <p class="mb-0">Give details of the highest scoring English test over the 24 month period.</p>
-                        <div class="multi-column-3">
-                            <div class="form-group">
-                                <label for="NameOfTest">Name of test</label>
-                                <input type="text" class="form-control" id="NameOfTest" name="NameOfTest">
-                            </div>
-                            <div class="form-group">
-                                <label for="dateOfTest">Date of test</label>
-                                <input type="date" class="form-control" id="dateOfTest" name="dateOfTest">
-                            </div>
-                            <div class="form-group">
-                                <label for="TestReferenceNumber">Test reference number</label>
-                                <input type="text" class="form-control" id="TestReferenceNumber" name="TestReferenceNumber">
-                            </div>
-                        </div>
-                        <div class="multi-column-3">
-                            <div class="form-group">
-                                <label for="ENTestCountry">Country where test was undertaken</label>      
-                                <select id="ENTestCountry" name="ENTestCountry" class="form-control">
+                                <label for="destinationCountry">Destination country:</label>
+                                <select id="destinationCountry" name="destinationCountry" class="form-control">
                                     <option value="" disabled selected>Please Select</option>
                                     <option value="Afghanistan">Afghanistan</option>
                                     <option value="Åland Islands">Åland Islands</option>
@@ -3643,1053 +3381,24 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="OverallTestScore">Overall test score</label>
-                                <input type="text" class="form-control" id="OverallTestScore" name="OverallTestScore">
-                            </div>
-                            <div class="form-group">
-                                <label for="MainLanguage">Main language</label>
-                                <select name="MainLanguage" id="MainLanguage" class="form-control">
-                                    <option value="afrikaans">Afrikaans</option>
-                                    <option value="albanian">Albanian</option>
-                                    <option value="amharic">Amharic</option>
-                                    <option value="arabic">Arabic</option>
-                                    <option value="armenian">Armenian</option>
-                                    <option value="azerbaijani">Azerbaijani</option>
-                                    <option value="basque">Basque</option>
-                                    <option value="belarusian">Belarusian</option>
-                                    <option value="bengali">Bengali</option>
-                                    <option value="bosnian">Bosnian</option>
-                                    <option value="bulgarian">Bulgarian</option>
-                                    <option value="catalan">Catalan</option>
-                                    <option value="cebuano">Cebuano</option>
-                                    <option value="chinese">Chinese</option>
-                                    <option value="croatian">Croatian</option>
-                                    <option value="czech">Czech</option>
-                                    <option value="danish">Danish</option>
-                                    <option value="dutch">Dutch</option>
-                                    <option value="english">English</option>
-                                    <option value="esperanto">Esperanto</option>
-                                    <option value="estonian">Estonian</option>
-                                    <option value="finnish">Finnish</option>
-                                    <option value="french">French</option>
-                                    <option value="frisian">Frisian</option>
-                                    <option value="galician">Galician</option>
-                                    <option value="georgian">Georgian</option>
-                                    <option value="german">German</option>
-                                    <option value="greek">Greek</option>
-                                    <option value="gujarati">Gujarati</option>
-                                    <option value="haitian_creole">Haitian Creole</option>
-                                    <option value="hausa">Hausa</option>
-                                    <option value="hawaiian">Hawaiian</option>
-                                    <option value="hebrew">Hebrew</option>
-                                    <option value="hindi">Hindi</option>
-                                    <option value="hmong">Hmong</option>
-                                    <option value="hungarian">Hungarian</option>
-                                    <option value="icelandic">Icelandic</option>
-                                    <option value="igbo">Igbo</option>
-                                    <option value="indonesian">Indonesian</option>
-                                    <option value="irish">Irish</option>
-                                    <option value="italian">Italian</option>
-                                    <option value="japanese">Japanese</option>
-                                    <option value="javanese">Javanese</option>
-                                    <option value="kannada">Kannada</option>
-                                    <option value="kazakh">Kazakh</option>
-                                    <option value="khmer">Khmer</option>
-                                    <option value="kinyarwanda">Kinyarwanda</option>
-                                    <option value="korean">Korean</option>
-                                    <option value="kurdish">Kurdish</option>
-                                    <option value="kyrgyz">Kyrgyz</option>
-                                    <option value="lao">Lao</option>
-                                    <option value="latin">Latin</option>
-                                    <option value="latvian">Latvian</option>
-                                    <option value="lithuanian">Lithuanian</option>
-                                    <option value="luxembourgish">Luxembourgish</option>
-                                    <option value="macedonian">Macedonian</option>
-                                    <option value="malagasy">Malagasy</option>
-                                    <option value="malay">Malay</option>
-                                    <option value="malayalam">Malayalam</option>
-                                    <option value="maltese">Maltese</option>
-                                    <option value="maori">Maori</option>
-                                    <option value="marathi">Marathi</option>
-                                    <option value="mongolian">Mongolian</option>
-                                    <option value="myanmar">Myanmar (Burmese)</option>
-                                    <option value="nepali">Nepali</option>
-                                    <option value="norwegian">Norwegian</option>
-                                    <option value="odia">Odia (Oriya)</option>
-                                    <option value="pashto">Pashto</option>
-                                    <option value="persian">Persian (Farsi)</option>
-                                    <option value="polish">Polish</option>
-                                    <option value="portuguese">Portuguese</option>
-                                    <option value="punjabi">Punjabi</option>
-                                    <option value="romanian">Romanian</option>
-                                    <option value="russian">Russian</option>
-                                    <option value="samoan">Samoan</option>
-                                    <option value="scots_gaelic">Scots Gaelic</option>
-                                    <option value="serbian">Serbian</option>
-                                    <option value="sesotho">Sesotho</option>
-                                    <option value="shona">Shona</option>
-                                    <option value="sindhi">Sindhi</option>
-                                    <option value="sinhala">Sinhala</option>
-                                    <option value="slovak">Slovak</option>
-                                    <option value="slovenian">Slovenian</option>
-                                    <option value="somali">Somali</option>
-                                    <option value="spanish">Spanish</option>
-                                    <option value="sundanese">Sundanese</option>
-                                    <option value="swahili">Swahili</option>
-                                    <option value="swedish">Swedish</option>
-                                    <option value="tajik">Tajik</option>
-                                    <option value="tamil">Tamil</option>
-                                    <option value="tatar">Tatar</option>
-                                    <option value="telugu">Telugu</option>
-                                    <option value="thai">Thai</option>
-                                    <option value="turkish">Turkish</option>
-                                    <option value="turkmen">Turkmen</option>
-                                    <option value="ukrainian">Ukrainian</option>
-                                    <option value="urdu">Urdu</option>
-                                    <option value="uyghur">Uyghur</option>
-                                    <option value="uzbek">Uzbek</option>
-                                    <option value="vietnamese">Vietnamese</option>
-                                    <option value="welsh">Welsh</option>
-                                    <option value="xhosa">Xhosa</option>
-                                    <option value="yiddish">Yiddish</option>
-                                    <option value="yoruba">Yoruba</option>
-                                    <option value="zulu">Zulu</option>
-                                </select>
+                                <label for="cityOfDestinationAfterDeparture">City/airport of destination after departure from the applied country:</label>
+                                <input type="text" class="form-control" id="cityOfDestinationAfterDeparture" name="cityOfDestinationAfterDeparture">
                             </div>
                         </div>
                     </div>
                     <div class="form-box">
-                        <h5 class="card-title font-weight-bold">Study in English language</h5>
+                        <p class="mb-0">Select the applicant's status in their destination country from the applied country.</p>
                         <div class="form-group">
-                            <label for="hasStudied5yrsEN">Has the applicant successfully completed at least five years study (in the English language) in Australia, Canada, New Zealand, Republic of South Africa, Republic of Ireland, United Kingdom and/or United States of America?</label>
-                            <select class="form-control" id="hasStudied5yrsEN" name="hasStudied5yrsEN">
+                            <label for="statusInDestinationCountry">Legal status:</label>
+                            <select class="form-control" id="statusInDestinationCountry" name="statusInDestinationCountry">
                                 <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
+                                <option>Citizen</option>
+                                <option>Permanent Residence</option>
+                                <option>Temporary Resident</option>
+                                <option>Visitor</option>
+                                <option>Undocumented</option>
+                                <option>Asylum Seeker</option>
                             </select>
-                        </div>
-                        <div class="hasStudied5yrsEN-yes" style="display: none">
-                            <div class="form-group">
-                                <label for="appliedCountry">Indicate all countries that apply</label>      
-                                <select id="appliedCountry" name="appliedCountry" class="form-control">
-                                    <option value="" disabled selected>Please Select</option>
-                                    <option value="Afghanistan">Afghanistan</option>
-                                    <option value="Åland Islands">Åland Islands</option>
-                                    <option value="Albania">Albania</option>
-                                    <option value="Algeria">Algeria</option>
-                                    <option value="American Samoa">American Samoa</option>
-                                    <option value="Andorra">Andorra</option>
-                                    <option value="Angola">Angola</option>
-                                    <option value="Anguilla">Anguilla</option>
-                                    <option value="Antarctica">Antarctica</option>
-                                    <option value="Antigua and Barbuda">Antigua and Barbuda</option>
-                                    <option value="Argentina">Argentina</option>
-                                    <option value="Armenia">Armenia</option>
-                                    <option value="Aruba">Aruba</option>
-                                    <option value="Australia">Australia</option>
-                                    <option value="Austria">Austria</option>
-                                    <option value="Azerbaijan">Azerbaijan</option>
-                                    <option value="Bahamas">Bahamas</option>
-                                    <option value="Bahrain">Bahrain</option>
-                                    <option value="Bangladesh">Bangladesh</option>
-                                    <option value="Barbados">Barbados</option>
-                                    <option value="Belarus">Belarus</option>
-                                    <option value="Belgium">Belgium</option>
-                                    <option value="Belize">Belize</option>
-                                    <option value="Benin">Benin</option>
-                                    <option value="Bermuda">Bermuda</option>
-                                    <option value="Bhutan">Bhutan</option>
-                                    <option value="Bolivia">Bolivia</option>
-                                    <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
-                                    <option value="Botswana">Botswana</option>
-                                    <option value="Bouvet Island">Bouvet Island</option>
-                                    <option value="Brazil">Brazil</option>
-                                    <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
-                                    <option value="Brunei Darussalam">Brunei Darussalam</option>
-                                    <option value="Bulgaria">Bulgaria</option>
-                                    <option value="Burkina Faso">Burkina Faso</option>
-                                    <option value="Burundi">Burundi</option>
-                                    <option value="Cambodia">Cambodia</option>
-                                    <option value="Cameroon">Cameroon</option>
-                                    <option value="Canada">Canada</option>
-                                    <option value="Cape Verde">Cape Verde</option>
-                                    <option value="Cayman Islands">Cayman Islands</option>
-                                    <option value="Central African Republic">Central African Republic</option>
-                                    <option value="Chad">Chad</option>
-                                    <option value="Chile">Chile</option>
-                                    <option value="China">China</option>
-                                    <option value="Christmas Island">Christmas Island</option>
-                                    <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
-                                    <option value="Colombia">Colombia</option>
-                                    <option value="Comoros">Comoros</option>
-                                    <option value="Congo">Congo</option>
-                                    <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
-                                    <option value="Cook Islands">Cook Islands</option>
-                                    <option value="Costa Rica">Costa Rica</option>
-                                    <option value="Cote D'ivoire">Cote D'ivoire</option>
-                                    <option value="Croatia">Croatia</option>
-                                    <option value="Cuba">Cuba</option>
-                                    <option value="Cyprus">Cyprus</option>
-                                    <option value="Czech Republic">Czech Republic</option>
-                                    <option value="Denmark">Denmark</option>
-                                    <option value="Djibouti">Djibouti</option>
-                                    <option value="Dominica">Dominica</option>
-                                    <option value="Dominican Republic">Dominican Republic</option>
-                                    <option value="Ecuador">Ecuador</option>
-                                    <option value="Egypt">Egypt</option>
-                                    <option value="El Salvador">El Salvador</option>
-                                    <option value="Equatorial Guinea">Equatorial Guinea</option>
-                                    <option value="Eritrea">Eritrea</option>
-                                    <option value="Estonia">Estonia</option>
-                                    <option value="Ethiopia">Ethiopia</option>
-                                    <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
-                                    <option value="Faroe Islands">Faroe Islands</option>
-                                    <option value="Fiji">Fiji</option>
-                                    <option value="Finland">Finland</option>
-                                    <option value="France">France</option>
-                                    <option value="French Guiana">French Guiana</option>
-                                    <option value="French Polynesia">French Polynesia</option>
-                                    <option value="French Southern Territories">French Southern Territories</option>
-                                    <option value="Gabon">Gabon</option>
-                                    <option value="Gambia">Gambia</option>
-                                    <option value="Georgia">Georgia</option>
-                                    <option value="Germany">Germany</option>
-                                    <option value="Ghana">Ghana</option>
-                                    <option value="Gibraltar">Gibraltar</option>
-                                    <option value="Greece">Greece</option>
-                                    <option value="Greenland">Greenland</option>
-                                    <option value="Grenada">Grenada</option>
-                                    <option value="Guadeloupe">Guadeloupe</option>
-                                    <option value="Guam">Guam</option>
-                                    <option value="Guatemala">Guatemala</option>
-                                    <option value="Guernsey">Guernsey</option>
-                                    <option value="Guinea">Guinea</option>
-                                    <option value="Guinea-bissau">Guinea-bissau</option>
-                                    <option value="Guyana">Guyana</option>
-                                    <option value="Haiti">Haiti</option>
-                                    <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
-                                    <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
-                                    <option value="Honduras">Honduras</option>
-                                    <option value="Hong Kong">Hong Kong</option>
-                                    <option value="Hungary">Hungary</option>
-                                    <option value="Iceland">Iceland</option>
-                                    <option value="India">India</option>
-                                    <option value="Indonesia">Indonesia</option>
-                                    <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
-                                    <option value="Iraq">Iraq</option>
-                                    <option value="Ireland">Ireland</option>
-                                    <option value="Isle of Man">Isle of Man</option>
-                                    <option value="Israel">Israel</option>
-                                    <option value="Italy">Italy</option>
-                                    <option value="Jamaica">Jamaica</option>
-                                    <option value="Japan">Japan</option>
-                                    <option value="Jersey">Jersey</option>
-                                    <option value="Jordan">Jordan</option>
-                                    <option value="Kazakhstan">Kazakhstan</option>
-                                    <option value="Kenya">Kenya</option>
-                                    <option value="Kiribati">Kiribati</option>
-                                    <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
-                                    <option value="Korea, Republic of">Korea, Republic of</option>
-                                    <option value="Kuwait">Kuwait</option>
-                                    <option value="Kyrgyzstan">Kyrgyzstan</option>
-                                    <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
-                                    <option value="Latvia">Latvia</option>
-                                    <option value="Lebanon">Lebanon</option>
-                                    <option value="Lesotho">Lesotho</option>
-                                    <option value="Liberia">Liberia</option>
-                                    <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
-                                    <option value="Liechtenstein">Liechtenstein</option>
-                                    <option value="Lithuania">Lithuania</option>
-                                    <option value="Luxembourg">Luxembourg</option>
-                                    <option value="Macao">Macao</option>
-                                    <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
-                                    <option value="Madagascar">Madagascar</option>
-                                    <option value="Malawi">Malawi</option>
-                                    <option value="Malaysia">Malaysia</option>
-                                    <option value="Maldives">Maldives</option>
-                                    <option value="Mali">Mali</option>
-                                    <option value="Malta">Malta</option>
-                                    <option value="Marshall Islands">Marshall Islands</option>
-                                    <option value="Martinique">Martinique</option>
-                                    <option value="Mauritania">Mauritania</option>
-                                    <option value="Mauritius">Mauritius</option>
-                                    <option value="Mayotte">Mayotte</option>
-                                    <option value="Mexico">Mexico</option>
-                                    <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
-                                    <option value="Moldova, Republic of">Moldova, Republic of</option>
-                                    <option value="Monaco">Monaco</option>
-                                    <option value="Mongolia">Mongolia</option>
-                                    <option value="Montenegro">Montenegro</option>
-                                    <option value="Montserrat">Montserrat</option>
-                                    <option value="Morocco">Morocco</option>
-                                    <option value="Mozambique">Mozambique</option>
-                                    <option value="Myanmar">Myanmar</option>
-                                    <option value="Namibia">Namibia</option>
-                                    <option value="Nauru">Nauru</option>
-                                    <option value="Nepal">Nepal</option>
-                                    <option value="Netherlands">Netherlands</option>
-                                    <option value="Netherlands Antilles">Netherlands Antilles</option>
-                                    <option value="New Caledonia">New Caledonia</option>
-                                    <option value="New Zealand">New Zealand</option>
-                                    <option value="Nicaragua">Nicaragua</option>
-                                    <option value="Niger">Niger</option>
-                                    <option value="Nigeria">Nigeria</option>
-                                    <option value="Niue">Niue</option>
-                                    <option value="Norfolk Island">Norfolk Island</option>
-                                    <option value="Northern Mariana Islands">Northern Mariana Islands</option>
-                                    <option value="Norway">Norway</option>
-                                    <option value="Oman">Oman</option>
-                                    <option value="Pakistan">Pakistan</option>
-                                    <option value="Palau">Palau</option>
-                                    <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
-                                    <option value="Panama">Panama</option>
-                                    <option value="Papua New Guinea">Papua New Guinea</option>
-                                    <option value="Paraguay">Paraguay</option>
-                                    <option value="Peru">Peru</option>
-                                    <option value="Philippines">Philippines</option>
-                                    <option value="Pitcairn">Pitcairn</option>
-                                    <option value="Poland">Poland</option>
-                                    <option value="Portugal">Portugal</option>
-                                    <option value="Puerto Rico">Puerto Rico</option>
-                                    <option value="Qatar">Qatar</option>
-                                    <option value="Reunion">Reunion</option>
-                                    <option value="Romania">Romania</option>
-                                    <option value="Russian Federation">Russian Federation</option>
-                                    <option value="Rwanda">Rwanda</option>
-                                    <option value="Saint Helena">Saint Helena</option>
-                                    <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
-                                    <option value="Saint Lucia">Saint Lucia</option>
-                                    <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
-                                    <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
-                                    <option value="Samoa">Samoa</option>
-                                    <option value="San Marino">San Marino</option>
-                                    <option value="Sao Tome and Principe">Sao Tome and Principe</option>
-                                    <option value="Saudi Arabia">Saudi Arabia</option>
-                                    <option value="Senegal">Senegal</option>
-                                    <option value="Serbia">Serbia</option>
-                                    <option value="Seychelles">Seychelles</option>
-                                    <option value="Sierra Leone">Sierra Leone</option>
-                                    <option value="Singapore">Singapore</option>
-                                    <option value="Slovakia">Slovakia</option>
-                                    <option value="Slovenia">Slovenia</option>
-                                    <option value="Solomon Islands">Solomon Islands</option>
-                                    <option value="Somalia">Somalia</option>
-                                    <option value="South Africa">South Africa</option>
-                                    <option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
-                                    <option value="Spain">Spain</option>
-                                    <option value="Sri Lanka">Sri Lanka</option>
-                                    <option value="Sudan">Sudan</option>
-                                    <option value="Suriname">Suriname</option>
-                                    <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
-                                    <option value="Swaziland">Swaziland</option>
-                                    <option value="Sweden">Sweden</option>
-                                    <option value="Switzerland">Switzerland</option>
-                                    <option value="Syrian Arab Republic">Syrian Arab Republic</option>
-                                    <option value="Taiwan">Taiwan</option>
-                                    <option value="Tajikistan">Tajikistan</option>
-                                    <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
-                                    <option value="Thailand">Thailand</option>
-                                    <option value="Timor-leste">Timor-leste</option>
-                                    <option value="Togo">Togo</option>
-                                    <option value="Tokelau">Tokelau</option>
-                                    <option value="Tonga">Tonga</option>
-                                    <option value="Trinidad and Tobago">Trinidad and Tobago</option>
-                                    <option value="Tunisia">Tunisia</option>
-                                    <option value="Turkey">Turkey</option>
-                                    <option value="Turkmenistan">Turkmenistan</option>
-                                    <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
-                                    <option value="Tuvalu">Tuvalu</option>
-                                    <option value="Uganda">Uganda</option>
-                                    <option value="Ukraine">Ukraine</option>
-                                    <option value="United Arab Emirates">United Arab Emirates</option>
-                                    <option value="United Kingdom">United Kingdom</option>
-                                    <option value="United States">United States</option>
-                                    <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
-                                    <option value="Uruguay">Uruguay</option>
-                                    <option value="Uzbekistan">Uzbekistan</option>
-                                    <option value="Vanuatu">Vanuatu</option>
-                                    <option value="Venezuela">Venezuela</option>
-                                    <option value="Viet Nam">Viet Nam</option>
-                                    <option value="Virgin Islands, British">Virgin Islands, British</option>
-                                    <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
-                                    <option value="Wallis and Futuna">Wallis and Futuna</option>
-                                    <option value="Western Sahara">Western Sahara</option>
-                                    <option value="Yemen">Yemen</option>
-                                    <option value="Zambia">Zambia</option>
-                                    <option value="Zimbabwe">Zimbabwe</option>
-                                </select>
-                            </div>
-                            <div class="form-group mt-3">
-                                <label for="detailsOfAcaQualification">Give details of the highest academic qualification the applicant has obtained from the countries indicated above</label>
-                                <textarea class="form-control" id="detailsOfAcaQualification" rows="3"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body step" style="display: none">
-                    <div class="form-box">
-                        <div class="form-group">
-                            <label for="hasSSCertificate">In the two years before applying for the student visa, has the applicant successfully completed the requirements for a Senior Secondary Certificate of Education (conducted in English in applied country)?</label>
-                            <select class="form-control" id="hasSSCertificate" name="hasSSCertificate">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="hasSubstantialComponent">In the two years before applying for the student visa, has the applicant successfully completed a substantial component of a course leading to a qualification from the Qualifications Framework at Certificate IV or higher as a holder of a student visa (conducted in English in applied country)?</label>
-                            <select class="form-control" id="hasSubstantialComponent" name="hasSubstantialComponent">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Countries visited -->
-                <div class="card-body step" style="display: none">
-                    <div class="form-box">
-                        <h3 class="card-title font-weight-bold">Countries visited</h3>
-                        <div class="form-group">
-                            <label for="hasVisitedAnyCountry">Has the applicant visited any countries in the past 10 years? Include:</label>
-                            <ul class="visited-countries">
-                                <li>Work or study outside your usual country of residence</li>
-                                <li>Holiday/leisure trips</li>
-                                <li>Business</li>
-                                <li>Military deployment</li>
-                                <li>Visits back to your usual country of residence if living away</li>
-                            </ul>
-                            <select class="form-control" id="hasVisitedAnyCountry" name="hasVisitedAnyCountry">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-box hasVisitedAnyCountry-yes" style="display: none">
-                        <h5 class="card-title font-weight-bold">Country Visited</h5>
-                        <div id="countries-visited">
-                            <div class="visited-entry">
-                                <input class="form-control" type="text" name="applicantsName[]" placeholder="Name">
-                                <input class="form-control" type="text" name="visitCountry[]" placeholder="Country name">
-                                <input class="form-control" type="date" name="dateFromVisit[]">
-                                <input class="form-control" type="date" name="date_toVisit[]">
-                                <input class="form-control" type="textarea" name="reasonForVisit[]" rows="3" placeholder="Reason for visit">
-                                <button type="button" class="remove-entry btn">Remove</button>
-                            </div>
-                        </div>
-                        <button type="button" class="add-btn" id="add-visited-country">Add Country</button>
-                    </div>
-                </div>
-                <div class="card-body step" style="display: none">
-                    <div class="form-box">
-                        <h5 class="card-title font-weight-bold">Visa history</h5>
-                        <div class="form-group">
-                            <label for="hasCurrentlyVisa">Has the applicant, or any person included in this application, held or currently hold a visa to Australia or any other country?</label>
-                            <select class="form-control" id="hasCurrentlyVisa" name="hasCurrentlyVisa">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="hasDepartedBeforePeriod">Has the applicant, or any person included in this application, ever been in Australia or any other country and not complied with visa conditions or departed outside their authorised period of stay?</label>
-                            <select class="form-control" id="hasDepartedBeforePeriod" name="hasDepartedBeforePeriod">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="hasVisaCancelled">Has the applicant, or any person included in this application, ever had an application for entry or further stay in Australia or any other country refused, or had a visa cancelled?</label>
-                            <select class="form-control" id="hasVisaCancelled" name="hasVisaCancelled">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group hasVisaCancelled-yes" style="display: none;">
-                            <label for="visaCancelledDetails">Give details</label>
-                            <textarea class="form-control" id="visaCancelledDetails" rows="3"></textarea>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Health declarations -->
-                <div class="card-body step" style="display: none">
-                    <div class="form-box">
-                        <h3 class="card-title font-weight-bold">Health declarations</h3>
-                        <div class="form-group">
-                            <label for="hasVisitedFor3months">In the last five years, has any applicant visited, or lived, outside their country of passport, for more than 3 consecutive months?</label>
-                            <select class="form-control" id="hasVisitedFor3months" name="hasVisitedFor3months">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-box hasVisitedFor3months-yes" style="display: none">
-                        <h5 class="card-title font-weight-bold">Country Visited</h5>
-                        <div id="countries-visited-3months">
-                            <div class="visited-entry">
-                                <input class="form-control" type="text" name="applicantsName[]" placeholder="Name">
-                                <input class="form-control" type="text" name="visitCountry[]" placeholder="Country name">
-                                <input class="form-control" type="date" name="dateFromVisit[]">
-                                <input class="form-control" type="date" name="date_toVisit[]">
-                                <input class="form-control" type="textarea" name="reasonForVisit[]" rows="3" placeholder="Reason for visit">
-                                <button type="button" class="remove-entry btn">Remove</button>
-                            </div>
-                        </div>
-                        <button type="button" class="add-btn" id="add-visited-country-3months">Add Country</button>
-                    </div>
-                </div>
-                <div class="card-body step" style="display: none">
-                    <div class="form-box">
-                        <div class="form-group">
-                            <label for="hasAdmittedInHospital">Does any applicant intend to enter a hospital or a health care facility (including nursing homes) while in the applied country?</label>
-                            <select class="form-control" id="hasAdmittedInHospital" name="hasAdmittedInHospital">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-box hasAdmittedInHospital-yes" style="display: none">
-                        <h5 class="card-title font-weight-bold">Add details</h5>
-                        <div id="addmited-hospital">
-                            <div class="hospital-entry">
-                                <input class="form-control" type="text" name="hospitalName[]" placeholder="Hospital Name">
-                                <input class="form-control" type="textarea" name="reasonForVisit[]" rows="3" placeholder="Reason...">
-                                <input class="form-control" type="text" name="actionInHospital[]" placeholder="Actions">
-                                <button type="button" class="remove-entry btn">Remove</button>
-                            </div>
-                        </div>
-                        <button type="button" class="add-btn" id="add-addmited-hospital">Add Hospital</button>
-                    </div>
-                    <div class="form-box">
-                        <div class="form-group">
-                            <label for="isIntedToWorkInHospital">Does any applicant intend to work as, or study or train to be, a health care worker or work within a health care facility while in the applied country?</label>
-                            <select class="form-control" id="isIntedToWorkInHospital" name="isIntedToWorkInHospital">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-box isIntedToWorkInHospital-yes" style="display: none">
-                        <h5 class="card-title font-weight-bold">Add details</h5>
-                        <div id="worked-hospital">
-                            <div class="worked-hospital-entry">
-                                <input class="form-control" type="text" name="workedName[]" placeholder="Name">
-                                <input class="form-control" type="text" name="Role[]" placeholder="Role">
-                                <input class="form-control" type="textarea" name="workedDetails[]" rows="3" placeholder="Details">
-                                <input class="form-control" type="text" name="workedActions[]" placeholder="Actions">
-                                <button type="button" class="remove-entry btn">Remove</button>
-                            </div>
-                        </div>
-                        <button type="button" class="add-btn" id="add-worked-hospital">Add Hospital</button>
-                    </div>
-                    <div class="form-box">
-                        <div class="form-group">
-                            <label for="isIntedToWorkInCareHospital">Does any applicant intend to work, study or train within aged care or disability care while in the applied country?</label>
-                            <select class="form-control" id="isIntedToWorkInCareHospital" name="isIntedToWorkInCareHospital">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-box isIntedToWorkInCareHospital-yes" style="display: none">
-                        <h5 class="card-title font-weight-bold">Add details</h5>
-                        <div id="worked-care-hospital">
-                            <div class="worked-hospital-entry">
-                                <input class="form-control" type="text" name="workedCareName[]" placeholder="Name">
-                                <input class="form-control" type="text" name="careRole[]" placeholder="Role">
-                                <input class="form-control" type="textarea" name="workedCareDetails[]" rows="3" placeholder="Details">
-                                <input class="form-control" type="text" name="workedCareActions[]" placeholder="Actions">
-                                <button type="button" class="remove-entry btn">Remove</button>
-                            </div>
-                        </div>
-                        <button type="button" class="add-btn" id="add-worked-care-hospital">Add Hospital</button>
-                    </div>
-                    <div class="form-box">
-                        <div class="form-group">
-                            <label for="isIntedToWorkInChildCareHospital">Does any applicant intend to work or be a trainee at a child care centre (including preschools and creches) while in the applied country?</label>
-                            <select class="form-control" id="isIntedToWorkInChildCareHospital" name="isIntedToWorkInChildCareHospital">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-box isIntedToWorkInChildCareHospital-yes" style="display: none">
-                        <h5 class="card-title font-weight-bold">Add details</h5>
-                        <div id="worked-child-care-hospital">
-                            <div class="hospital-entry">
-                                <input class="form-control" type="text" name="careHospitalName[]" placeholder="Name">
-                                <input class="form-control" type="textarea" name="careDetails[]" rows="3" placeholder="Detais">
-                                <input class="form-control" type="text" name="careActionInHospital[]" placeholder="Actions">
-                                <button type="button" class="remove-entry btn">Remove</button>
-                            </div>
-                        </div>
-                        <button type="button" class="add-btn" id="add-worked-child-care-hospital">Add Hospital</button>
-                    </div>
-                    <div class="form-box">
-                        <div class="form-group">
-                            <label for="hasTuberculosis">Has any applicant:</label>
-                            <ul class="visited-countries">
-                                <li>Ever had, or currently have, tuberculosis?</li>
-                                <li>Been in close contact with a family member that has active tuberculosis?</li>
-                                <li>Ever had a chest x-ray which showed an abnormality?</li>
-                            </ul>
-                            <select class="form-control" id="hasTuberculosis" name="hasTuberculosis">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-box hasTuberculosis-yes" style="display: none">
-                        <h5 class="card-title font-weight-bold">Add details</h5>
-                        <div id="has-tuberculosis">
-                            <div class="hospital-entry">
-                                <input class="form-control" type="text" name="tuberculosisName[]" placeholder="Name">
-                                <input class="form-control" type="textarea" name="tuberculosisDetails[]" rows="3" placeholder="Detais">
-                                <input class="form-control" type="text" name="tuberculosisAction[]" placeholder="Actions">
-                                <button type="button" class="remove-entry btn">Remove</button>
-                            </div>
-                        </div>
-                        <button type="button" class="add-btn" id="add-tuberculosis">Add</button>
-                    </div>
-                </div>
-                <div class="card-body step" style="display: none">
-                    <div class="form-box">
-                        <div class="form-group">
-                            <label for="hasDisease">During their proposed visit to Australia, does any applicant expect to incur medical costs, or require treatment or medical follow up for:</label>
-                            <ul class="visited-countries">
-                                <li>Blood disorder</li>
-                                <li>Cancer</li>
-                                <li>Heart disease</li>
-                                <li>Hepatitis B or C and/or liver disease</li>
-                                <li>HIV infection, including AIDS</li>
-                                <li>Kidney disease, including dialysis</li>
-                                <li>Mental illness</li>
-                                <li>Pregnancy</li>
-                                <li>Respiratory disease that has required hospital admission or oxygen therapy</li>
-                                <li>Other?</li>
-                            </ul>
-                            <select class="form-control" id="hasDisease" name="hasDisease">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-box hasDisease-yes" style="display: none">
-                        <h5 class="card-title font-weight-bold">Add details</h5>
-                        <div id="has-disease">
-                            <div class="hospital-entry">
-                                <input class="form-control" type="text" name="diseaseName[]" placeholder="Name">
-                                <input class="form-control" type="textarea" name="diseaseCondition[]" rows="3" placeholder="Condition">
-                                <input class="form-control" type="text" name="actionForDisease[]" placeholder="Actions">
-                                <button type="button" class="remove-entry btn">Remove</button>
-                            </div>
-                        </div>
-                        <button type="button" class="add-btn" id="add-disease">Add another</button>
-                    </div>
-                    <div class="form-box">
-                        <div class="form-group">
-                            <label for="requireOngoingMedicalCare">Does any applicant require ongoing medical care or need special equipment, assistive technology or assistance from others for daily living?</label>
-                            <select class="form-control" id="requireOngoingMedicalCare" name="requireOngoingMedicalCare">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-box requireOngoingMedicalCare-yes" style="display: none">
-                        <h5 class="card-title font-weight-bold">Add details</h5>
-                        <div id="require-medical-care">
-                            <div class="hospital-entry">
-                                <input class="form-control" type="text" name="treatmentName[]" placeholder="Name">
-                                <input class="form-control" type="textarea" name="treatmentDetails[]" rows="3" placeholder="Details">
-                                <input class="form-control" type="text" name="actionTreatment[]" placeholder="Actions">
-                                <button type="button" class="remove-entry btn">Remove</button>
-                            </div>
-                        </div>
-                        <button type="button" class="add-btn" id="add-require-medical-care">Add another</button>
-                    </div>
-                </div>
-
-                <!-- Character declarations -->
-                <div class="card-body step" style="display: none">
-                    <div class="form-box">
-                        <h3 class="card-title font-weight-bold">Character declarations</h3>
-                        <p class="mb-0">If the applicant answers ‘Yes’ to any of the character declarations they must give all relevant details. For combined applications, state which applicant the declaration applies to.</p>
-                        <p class="mb-0">If the matter relates to a criminal conviction, provide:</p>
-                        <ul class="visited-countries">
-                            <li>The date and nature of the offence</li>
-                            <li>Full details of the sentence</li>
-                            <li>Dates of any period of imprisonment or other detention</li>
-                        </ul>
-                        <div class="form-group">
-                            <label for="hasOffenceCurrentlyAwaiting">Has any applicant ever been charged with any offence that is currently awaiting legal action?</label>
-                            <select class="form-control" id="hasOffenceCurrentlyAwaiting" name="hasOffenceCurrentlyAwaiting">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="hasRemovedOffence">Has any applicant ever been convicted of an offence in any country (including any conviction which is now removed from official records)?</label>
-                            <select class="form-control" id="hasRemovedOffence" name="hasRemovedOffence">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="hasDomesticViolence">Has any applicant ever been the subject of a domestic violence or family violence order, or any other order, of a tribunal or court or other similar authority, for the personal protection of another person?</label>
-                            <select class="form-control" id="hasDomesticViolence" name="hasDomesticViolence">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="hasArrestWarrant">Has any applicant ever been the subject of an arrest warrant or Interpol notice?</label>
-                            <select class="form-control" id="hasArrestWarrant" name="hasArrestWarrant">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="hasSexualOffence">Has any applicant ever been found guilty of a sexually based offence involving a child (including where no conviction was recorded)?</label>
-                            <select class="form-control" id="hasSexualOffence" name="hasSexualOffence">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="hasRegisteredSexualOffence">Has any applicant ever been named on a sex offender register?</label>
-                            <select class="form-control" id="hasRegisteredSexualOffence" name="hasRegisteredSexualOffence">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="hasInsanityOffence">Has any applicant ever been acquitted of any offence on the grounds of unsoundness of mind or insanity?</label>
-                            <select class="form-control" id="hasInsanityOffence" name="hasInsanityOffence">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="hasInCourtNotPlead">Has any applicant ever been found by a court not fit to plead?</label>
-                            <select class="form-control" id="hasInCourtNotPlead" name="hasInCourtNotPlead">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="hasOffenceNationalSecurity">Has any applicant ever been directly or indirectly involved in, or associated with, activities which would represent a risk to national security in applied country or any other country?</label>
-                            <select class="form-control" id="hasOffenceNationalSecurity" name="hasOffenceNationalSecurity">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="hasGenocideOffence">Has any applicant ever been charged with, or indicted for: genocide, war crimes, crimes against humanity, torture, slavery, or any other crime that is otherwise of a serious international concern?</label>
-                            <select class="form-control" id="hasGenocideOffence" name="hasGenocideOffence">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="hasAssociatedWithCriminal">Has any applicant ever been associated with a person, group or organisation that has been or is involved in criminal conduct?</label>
-                            <select class="form-control" id="hasAssociatedWithCriminal" name="hasAssociatedWithCriminal">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="hasAssociatedWithWarCrimeOrganisation">Has any applicant ever been associated with an organisation engaged in violence or engaged in acts of violence (including war, insurgency, freedom fighting, terrorism, protest) either overseas or in applied country?</label>
-                            <select class="form-control" id="hasAssociatedWithWarCrimeOrganisation" name="hasAssociatedWithWarCrimeOrganisation">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="hasServedInAnyForce">Has any applicant ever served in a military force, police force, state sponsored / private militia or intelligence agency (including secret police)?</label>
-                            <select class="form-control" id="hasServedInAnyForce" name="hasServedInAnyForce">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="hasMilitaryTraining">Has any applicant ever undergone any military/paramilitary training, been trained in weapons/explosives or in the manufacture of chemical/biological products?</label>
-                            <select class="form-control" id="hasMilitaryTraining" name="hasMilitaryTraining">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="hasTraffickingOffences">Has any applicant ever been involved in people smuggling or people trafficking offences?</label>
-                            <select class="form-control" id="hasTraffickingOffences" name="hasTraffickingOffences">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="hasRemovedFromAnyCountry">Has any applicant ever been removed, deported or excluded from any country (including applied country)?</label>
-                            <select class="form-control" id="hasRemovedFromAnyCountry" name="hasRemovedFromAnyCountry">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="hasOverstayedVisa">Has any applicant ever overstayed a visa in any country (including applied country)?</label>
-                            <select class="form-control" id="hasOverstayedVisa" name="hasOverstayedVisa">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="hasOutstandingDebts">Has any applicant ever had any outstanding debts to the Government or any public authority in country of residence or applied country?</label>
-                            <select class="form-control" id="hasOutstandingDebts" name="hasOutstandingDebts">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Student declarations -->
-                <div class="card-body step" style="display: none">
-                    <div class="form-box">
-                        <h3 class="card-title font-weight-bold">Student declarations</h3>
-                        <h5 class="text-warning">Warning:</h5>
-                        <p class="mb-0 text-warning">Giving false or misleading information is a serious offence.</p>
-                        <p class="mb-0">The applicants declare that they:</p>
-                        <div class="form-group">
-                            <label for="HaveReadAndUnderstood">Have read and understood the information provided on the website regarding living and studying in the applied country.</label>
-                            <select class="form-control" id="HaveReadAndUnderstood" name="HaveReadAndUnderstood">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="HaveHealthInsurance">Have made adequate arrangements for health insurance for the period of their stay in applied country and acknowledge they are required to maintain these arrangements while in the applied country as the holder of a student visa if granted.</label>
-                            <select class="form-control" id="HaveHealthInsurance" name="HaveHealthInsurance">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="UnderstandStudentVisaIsTemporary">Understand that a student visa is a temporary visa and that being granted a student visa will not guarantee that they will be eligible for the grant of a further visa to stay in the applied country, including a skilled migration visa.</label>
-                            <select class="form-control" id="UnderstandStudentVisaIsTemporary" name="UnderstandStudentVisaIsTemporary">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="UnderstandFurtherVisaMustDepart">Understand that if they cannot obtain a further visa they must depart the applied country on or before the cease date of the student visa.</label>
-                            <select class="form-control" id="UnderstandFurtherVisaMustDepart" name="UnderstandFurtherVisaMustDepart">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="complyWithAllConditions">Acknowledge that if granted a student visa, they are required to understand and comply with all conditions imposed on the visa, including conditions that restrict their right to work in the applied country.</label>
-                            <select class="form-control" id="complyWithAllConditions" name="complyWithAllConditions">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="understoodTheInformationProvided">Have read and understood the information provided to them in this application.</label>
-                            <select class="form-control" id="understoodTheInformationProvided" name="understoodTheInformationProvided">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="providedCorrectInformation">Have provided complete and correct information in every detail on this form, and on any attachments to it.</label>
-                            <select class="form-control" id="providedCorrectInformation" name="providedCorrectInformation">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="UnderstandApplicationMayRefused">Understand that if any fraudulent documents or false or misleading information has been provided with this application, or if any of the applicants fail to satisfy the Minister of their identity, the application may be refused and the applicant(s), and any member of their family unit, may become unable to be granted a visa for a specified period of time.</label>
-                            <select class="form-control" id="UnderstandApplicationMayRefused" name="UnderstandApplicationMayRefused">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="UnderstandApplicationMayCancelled">Understand that if documents are found to be fraudulent or information to be incorrect after the grant of a visa, the visa may subsequently be cancelled.</label>
-                            <select class="form-control" id="UnderstandApplicationMayCancelled" name="UnderstandApplicationMayCancelled">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="UnderstandNotHaveAutomaticRightEntry">Understand that if this application is approved, any person not included in this application will not have automatic right of entry to the applied country.</label>
-                            <select class="form-control" id="UnderstandNotHaveAutomaticRightEntry" name="UnderstandNotHaveAutomaticRightEntry">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="immediatelyNotifyChanges">Will immediately notify the Department in writing about any changes to their email or residential address, course enrolment, or members of their family unit, or changes to any information they provided in their application, while this application is being considered.</label>
-                            <select class="form-control" id="immediatelyNotifyChanges" name="immediatelyNotifyChanges">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-box">
-                        <h5>Australian values</h5>
-                        <div class="form-group">
-                            <label for="applicantIsOver18">Each applicant who is 18 years or over has read, or had explained to them, information provided by the applied country’s Government on applied country’s society and values, and agrees to the applied country’s values statement.</label>
-                            <select class="form-control" id="applicantIsOver18" name="applicantIsOver18">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body step" style="display: none">
-                    <div class="form-box">
-                        <div class="form-group">
-                            <label for="giveConsentFingerprints">Give consent to the collection of their fingerprints and facial image if required.</label>
-                            <select class="form-control" id="giveConsentFingerprints" name="giveConsentFingerprints">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="grantInformation">Understand that, if required to provide their fingerprints and facial image, the applicant's fingerprints and facial image and biographical information held by the Department may be given to applied country’s law enforcement agencies to help identify the applicant and determine eligibility for grant of the visa being applied for, and for law enforcement purposes.</label>
-                            <select class="form-control" id="grantInformation" name="grantInformation">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="giveConsentDisclosing">Give consent to the law enforcement agencies disclosing the applicant's biometric, biographical and criminal record information to the Department to help identify the applicant, to determine eligibility for grant of a visa and for law enforcement purposes.</label>
-                            <select class="form-control" id="giveConsentDisclosing" name="giveConsentDisclosing">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="giveConsentApplicantBiometric">Give consent to the Department using the applicant's biometric, biographical and criminal record information obtained for the purposes of the Migration Act 1958 or the Citizenship Act 2007.</label>
-                            <select class="form-control" id="giveConsentApplicantBiometric" name="giveConsentApplicantBiometric">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <p class="mb-0">As an applicant:</p>
-                            <label for="doNotHoldAnotherVisa">I understand that if my visa ceases to be in effect and I do not hold another visa to remain in applied country at that time, I will be an unlawful non-citizen under the Migration Act 1958. As such, I will be expected to depart from applied country, and be subject to removal under the Migration Act 1958.</label>
-                            <select class="form-control" id="doNotHoldAnotherVisa" name="doNotHoldAnotherVisa">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body step" style="display: none">
-                    <div class="form-box">
-                        <h5>Declaration page</h5>
-                        <div class="form-group">
-                            <label for="applicantDeclaretion">I Hereby declare all information provided in this page is true and adhered to as per the requirement. I understand any false statement will lead to criminal prosecution and my visa being rejected.</label>
-                            <select class="form-control" id="applicantDeclaretion" name="applicantDeclaretion">
-                                <option value="" disabled selected>Please Select</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-box">
-                        <h5>Attach documents</h5>
-                        <div class="custom-file">
-                            <label class="custom-file-label" for="DocumentsRequired">Documents Required</label>
-                            <input type="file" class="custom-file-input" id="DocumentsRequired">
-                        </div>
-                        <div class="custom-file">
-                            <label class="custom-file-label" for="PassportBioPage">Passport Bio Page</label>
-                            <input type="file" class="custom-file-input" id="PassportBioPage">
-                        </div>
-                        <div class="custom-file">
-                            <label class="custom-file-label" for="IdentificationDocument">Identification Document</label>
-                            <input type="file" class="custom-file-input" id="IdentificationDocument">
-                        </div>
-                        <div class="custom-file">
-                            <label class="custom-file-label" for="Resume">Resume</label>
-                            <input type="file" class="custom-file-input" id="Resume">
-                        </div>
-                        <div class="custom-file">
-                            <label class="custom-file-label" for="CertificatesHonors">Certificates and Honors</label>
-                            <input type="file" class="custom-file-input" id="CertificatesHonors">
-                        </div>
-                        <div class="custom-file">
-                            <label class="custom-file-label" for="COE">COE</label>
-                            <input type="file" class="custom-file-input" id="COE">
-                        </div>
-                        <div class="custom-file">
-                            <label class="custom-file-label" for="OfferLetter">Offer letter</label>
-                            <input type="file" class="custom-file-input" id="OfferLetter">
-                        </div>
-                        <div class="custom-file">
-                            <label class="custom-file-label" for="BankStatement">Bank Statement</label>
-                            <input type="file" class="custom-file-input" id="BankStatement">
-                        </div>
-                        <div class="custom-file">
-                            <label class="custom-file-label" for="ReceiptFeesPaid">Receipt of Fees Paid</label>
-                            <input type="file" class="custom-file-input" id="ReceiptFeesPaid">
-                        </div>
-                        <div class="custom-file">
-                            <label class="custom-file-label" for="HealthInsuarance">Health Insuarance</label>
-                            <input type="file" class="custom-file-input" id="HealthInsuarance">
-                        </div>
-                        <div class="custom-file">
-                            <label class="custom-file-label" for="OtherDocuments">Other Documents related to this application</label>
-                            <input type="file" class="custom-file-input" id="OtherDocuments">
                         </div>
                     </div>
                 </div>
@@ -4757,9 +3466,9 @@
         </div>
     </section>
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-      <script src="./assets/js/popper.min.js"></script>
-      <script src="./assets/js/bootstrap.min.js"></script>
-      <script src="./assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
