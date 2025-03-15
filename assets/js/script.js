@@ -361,7 +361,7 @@ document.getElementById('add-CoE-details').addEventListener('click', function() 
   var newEntry = document.createElement('div');
   newEntry.classList.add('CoE-entry');
   newEntry.innerHTML = `
-      <input class="form-control" type="text" name="CoEName[]" placeholder="Name">
+      <input class="form-control" type="text" name="CoEName[]" placeholder="COE Code">
       <input class="form-control" type="text" name="CoEActions[]" placeholder="Actions">
       <button type="button" class="remove-entry btn">Remove</button>
   `;
