@@ -55,11 +55,12 @@
     font-size: 14px;
     color: var(--btn-bg);
 }
-.card-footer .btn, .remove-entry{
+.card-footer .btn, .remove-entry, .custom-file input[type="file"]::file-selector-button{
     color: var(--white);
     border-radius: 4px;
     background-color: var(--btn-bg);
     padding: 10px 25px;
+    border: none;
 }
 .card-footer .btn:hover, .remove-entry:hover{
     color: var(--black);
@@ -69,7 +70,7 @@
 }
 
 /* Repeater style */
-div#education-history, div#AUS-education-history, div#countries-visited, #countries-visited-3months, #addmited-hospital, #worked-hospital, #worked-care-hospital, #worked-child-care-hospital, #has-tuberculosis, #has-disease, #require-medical-care, #hasCoE-details, #other-evidence {
+div#education-history, div#AUS-education-history, div#countries-visited, #countries-visited-3months, #addmited-hospital, #worked-hospital, #worked-care-hospital, #worked-child-care-hospital, #has-tuberculosis, #has-disease, #require-medical-care, #hasCoE-details, #other-evidence, #nid-details {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -82,6 +83,11 @@ div#education-history, div#AUS-education-history, div#countries-visited, #countr
 .Non-CoE-entry {
     display: grid;
     grid-template-columns: 1fr 2fr 2fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+.nid-entry {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 1fr 1fr 1fr 1fr;
     gap: 10px;
 }
 .education-entry {
@@ -111,7 +117,7 @@ div#education-history, div#AUS-education-history, div#countries-visited, #countr
 .remove-entry:hover{
     background-color: var(--btn-bg);
 }
-button#add-education-entry, button#AUS-add-education-entry,  button#add-visited-country, button#add-visited-country-3months, button#add-addmited-hospital, #add-worked-hospital, #add-worked-care-hospital, #add-worked-child-care-hospital, #add-tuberculosis, #add-disease, #add-require-medical-care, #add-CoE-details, #add-other-evidence{
+button#add-education-entry, button#AUS-add-education-entry,  button#add-visited-country, button#add-visited-country-3months, button#add-addmited-hospital, #add-worked-hospital, #add-worked-care-hospital, #add-worked-child-care-hospital, #add-tuberculosis, #add-disease, #add-require-medical-care, #add-CoE-details, #add-other-evidence, #add-nid-details{
     display: inline-flex;
     width: 180px;
     padding: 8px 15px;
@@ -119,9 +125,31 @@ button#add-education-entry, button#AUS-add-education-entry,  button#add-visited-
     border: 1px solid #f8f9fa;
     justify-content: center;
 }
-button#add-education-entry:hover, button#AUS-add-education-entry:hover, button#add-visited-country:hover, button#add-visited-country-3months:hover, button#add-addmited-hospital:hover, #add-worked-hospital:hover, #add-worked-care-hospital:hover, #add-worked-child-care-hospital:hover, #add-tuberculosis:hover, #add-disease:hover, #add-require-medical-care:hover, #add-CoE-details:hover, #add-other-evidence:hover{
+button#add-education-entry:hover, button#AUS-add-education-entry:hover, button#add-visited-country:hover, button#add-visited-country-3months:hover, button#add-addmited-hospital:hover, #add-worked-hospital:hover, #add-worked-care-hospital:hover, #add-worked-child-care-hospital:hover, #add-tuberculosis:hover, #add-disease:hover, #add-require-medical-care:hover, #add-CoE-details:hover, #add-other-evidence:hover, #add-nid-details:hover{
     color: var(--white);
     background-color: var(--btn-bg);
+}
+
+/* Doc upload Style */
+.custom-file .custom-file-label{
+    font-weight: 500;
+}
+.file-path{
+    display: none;
+}
+.remove-file-btn {
+    background-color: #ff4d4d;
+    color: var(--white);
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.remove-file-btn:hover {
+    background-color: #ff1a1a;
+}
+.hide-file-selector-button input[type="file"]::file-selector-button {
+    display: none;
 }
 
 /* Modal Style */
@@ -147,7 +175,7 @@ button#add-education-entry:hover, button#AUS-add-education-entry:hover, button#a
 }
 
 @media  screen and (max-width: 767px) {
-    .Non-CoE-entry, .education-entry, .visited-entry, .hospital-entry, .worked-hospital-entry{
+    .Non-CoE-entry, .education-entry, .visited-entry, .hospital-entry, .worked-hospital-entry, .nid-entry{
         grid-template-columns: 1fr;
     }
     .form-card .multi-column, .form-card .multi-column-3{
