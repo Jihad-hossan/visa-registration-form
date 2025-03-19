@@ -318,7 +318,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="applyForVisa">Is the applicant applying for this visa because their study in Australia has deferred due to COVID-19?</label>
+                            <label for="applyForVisa">Is the applicant applying for this visa because their study in the applying country has deferred due to COVID-19?</label>
                             <select class="form-control" id="applyForVisa">
                                 <option value="" disabled selected>Please Select</option>
                                 <option>Yes</option>
@@ -329,7 +329,7 @@
                     <div class="form-box">
                         <h5 class="card-title font-weight-bold">Confirmation of enrolment</h5>
                         <div class="form-group">
-                            <label for="hasCoE">Does the applicant hold a Confirmation of Enrolment (CoE) for any intended course of study in Australia?</label>
+                            <label for="hasCoE">Does the applicant hold a Confirmation of Enrolment (CoE) for any intended course of study in the applying country?</label>
                             <select class="form-control" id="hasCoE" name="hasCoE">
                                 <option value="" disabled selected>Please Select</option>
                                 <option value="yes">Yes</option>
@@ -354,7 +354,7 @@
                     <div class="form-box">
                         <h5 class="card-title font-weight-bold">Other evidence of intended study</h5>
                         <div class="form-group">
-                            <label for="hasNoCoE">Does the applicant hold evidence of their intended study in Australia other than a CoE?</label>
+                            <label for="hasNoCoE">Does the applicant hold evidence of their intended study in the applying country other than a CoE?</label>
                             <select class="form-control" id="hasNoCoE">
                                 <option value="" disabled selected>Please Select</option>
                                 <option value="yes">Yes</option>
@@ -384,7 +384,7 @@
                         <button type="button" class="add-btn" id="add-other-evidence">Add Country</button>
                         
                         <div class="form-group">
-                            <label for="courseContinuation">Is this course a continuation of the applicant's studies or training outside Australia?</label>
+                            <label for="courseContinuation">Is this course a continuation of the applicant's studies or training outside the applying country?</label>
                             <select class="form-control" id="courseContinuation">
                                 <option value="" disabled selected>Please Select</option>
                                 <option>Yes</option>
@@ -395,7 +395,7 @@
                     <div class="form-box">
                         <h5 class="card-title font-weight-bold">Closure of education provider</h5>
                         <div class="form-group">
-                            <label for="courseContinuation">Is the applicant applying for this visa due to the closure of their Australian education provider?</label>
+                            <label for="courseContinuation">Is the applicant applying for this visa due to the closure of their education provider?</label>
                             <select class="form-control" id="courseContinuation">
                                 <option value="" disabled selected>Please Select</option>
                                 <option>Yes</option>
@@ -420,7 +420,7 @@
                 <div class="card-body step" style="display: none">
                     <div class="form-box">
                         <h3 class="section-title mb-0">Primary applicant</h3>
-                        <p class="mb-0"><strong>Information: Entering names incorrectly may result in denial of permission to board an aircraft to Applied Country, or result in delays in border processing on arrival to the Country, even if the applicant has been granted a visa.</strong></p>
+                        <p class="mb-0 info-big"><strong>Information: Entering names incorrectly may result in denial of permission to board an aircraft to Applied Country, or result in delays in border processing on arrival to the Country, even if the applicant has been granted a visa.</strong></p>
                     </div>
                     <div class="form-box">
                         <h5 class="card-title font-weight-bold">Passport details</h5>
@@ -1338,7 +1338,7 @@
                     <div class="form-box">
                         <h5 class="card-title font-weight-bold">Health examination</h5>
                         <div class="form-group">
-                            <label for="hasHealthExaminatin">Has this applicant undertaken a health examination for an Australian visa in the last 12 months?</label>
+                            <label for="hasHealthExaminatin">Has this applicant undertaken a health examination for any visa in the last 12 months?</label>
                             <select class="form-control" id="hasHealthExaminatin" name="hasHealthExaminatin">
                                 <option value="" disabled selected>Please Select</option>
                                 <option value="yes">Yes</option>
@@ -1352,7 +1352,7 @@
                 <div class="card-body step" style="display: none">
                     <div class="form-box">
                         <h3 class="section-title mb-0">Additional identity questions</h3>
-                        <p class="mb-0"><strong>Provide further details below, where available.</strong></p>
+                        <p class="mb-0 info-big"><strong>Provide further details below, where available.</strong></p>
                     </div>
                     <div class="form-box">
                         <h5 class="card-title font-weight-bold">Previous travel to Applied Country</h5>
@@ -1965,7 +1965,7 @@
                         <h5 class="card-title font-weight-bold">Email address</h5>
                         <div class="form-group">
                             <label for="EmailAddress">Email address</label>
-                            <input type="email" class="form-control" id="EmailAddress" placeholder="kinghayaan@gmail.com">
+                            <input type="email" class="form-control" id="EmailAddress" placeholder="email@example.com">
                         </div>
                     </div>
                 </div>
@@ -3019,7 +3019,7 @@
                     <div class="form-box">
                         <h3 class="card-title font-weight-bold">Education</h3>
                         <h5 class="card-title font-weight-bold">Highest level of schooling</h5>
-                        <p class="mb-0">Give details of the applicant's highest level of schooling completed outside AppliedCountry.</p>
+                        <p class="mb-0 info-big">Give details of the applicant's highest level of schooling completed outside AppliedCountry.</p>
                         <div class="form-group">
                             <label for="HighestLevelOfSchooling">Highest level of schooling completed:</label>
                             <select class="form-control" id="HighestLevelOfSchooling" name="HighestLevelOfSchooling">
@@ -4341,6 +4341,10 @@
                                 <option value="no">No</option>
                             </select>
                         </div>
+                        <div class="form-group hasOffenceCurrentlyAwaiting-yes" style="display: none;">
+                            <label for="hasOffenceCurrentlyAwaiting-yes">Give details</label>
+                            <textarea class="form-control" id="hasOffenceCurrentlyAwaiting-yes" rows="3"></textarea>
+                        </div>
                         <div class="form-group">
                             <label for="hasRemovedOffence">Has any applicant ever been convicted of an offence in any country (including any conviction which is now removed from official records)?</label>
                             <select class="form-control" id="hasRemovedOffence" name="hasRemovedOffence">
@@ -4348,6 +4352,10 @@
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
                             </select>
+                        </div>
+                        <div class="form-group hasRemovedOffence-yes" style="display: none;">
+                            <label for="hasRemovedOffence-yes">Give details</label>
+                            <textarea class="form-control" id="hasRemovedOffence-yes" rows="3"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="hasDomesticViolence">Has any applicant ever been the subject of a domestic violence or family violence order, or any other order, of a tribunal or court or other similar authority, for the personal protection of another person?</label>
@@ -4357,6 +4365,10 @@
                                 <option value="no">No</option>
                             </select>
                         </div>
+                        <div class="form-group hasDomesticViolence-yes" style="display: none;">
+                            <label for="hasDomesticViolence-yes">Give details</label>
+                            <textarea class="form-control" id="hasDomesticViolence-yes" rows="3"></textarea>
+                        </div>
                         <div class="form-group">
                             <label for="hasArrestWarrant">Has any applicant ever been the subject of an arrest warrant or Interpol notice?</label>
                             <select class="form-control" id="hasArrestWarrant" name="hasArrestWarrant">
@@ -4364,6 +4376,10 @@
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
                             </select>
+                        </div>
+                        <div class="form-group hasArrestWarrant-yes" style="display: none;">
+                            <label for="hasArrestWarrant-yes">Give details</label>
+                            <textarea class="form-control" id="hasArrestWarrant-yes" rows="3"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="hasSexualOffence">Has any applicant ever been found guilty of a sexually based offence involving a child (including where no conviction was recorded)?</label>
@@ -4373,6 +4389,10 @@
                                 <option value="no">No</option>
                             </select>
                         </div>
+                        <div class="form-group hasSexualOffence-yes" style="display: none;">
+                            <label for="hasSexualOffence-yes">Give details</label>
+                            <textarea class="form-control" id="hasSexualOffence-yes" rows="3"></textarea>
+                        </div>
                         <div class="form-group">
                             <label for="hasRegisteredSexualOffence">Has any applicant ever been named on a sex offender register?</label>
                             <select class="form-control" id="hasRegisteredSexualOffence" name="hasRegisteredSexualOffence">
@@ -4380,6 +4400,10 @@
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
                             </select>
+                        </div>
+                        <div class="form-group hasRegisteredSexualOffence-yes" style="display: none;">
+                            <label for="hasRegisteredSexualOffence-yes">Give details</label>
+                            <textarea class="form-control" id="hasRegisteredSexualOffence-yes" rows="3"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="hasInsanityOffence">Has any applicant ever been acquitted of any offence on the grounds of unsoundness of mind or insanity?</label>
@@ -4389,6 +4413,10 @@
                                 <option value="no">No</option>
                             </select>
                         </div>
+                        <div class="form-group hasInsanityOffence-yes" style="display: none;">
+                            <label for="hasInsanityOffence-yes">Give details</label>
+                            <textarea class="form-control" id="hasInsanityOffence-yes" rows="3"></textarea>
+                        </div>
                         <div class="form-group">
                             <label for="hasInCourtNotPlead">Has any applicant ever been found by a court not fit to plead?</label>
                             <select class="form-control" id="hasInCourtNotPlead" name="hasInCourtNotPlead">
@@ -4396,6 +4424,10 @@
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
                             </select>
+                        </div>
+                        <div class="form-group hasInCourtNotPlead-yes" style="display: none;">
+                            <label for="hasInCourtNotPlead-yes">Give details</label>
+                            <textarea class="form-control" id="hasInCourtNotPlead-yes" rows="3"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="hasOffenceNationalSecurity">Has any applicant ever been directly or indirectly involved in, or associated with, activities which would represent a risk to national security in applied country or any other country?</label>
@@ -4405,6 +4437,10 @@
                                 <option value="no">No</option>
                             </select>
                         </div>
+                        <div class="form-group hasOffenceNationalSecurity-yes" style="display: none;">
+                            <label for="hasOffenceNationalSecurity-yes">Give details</label>
+                            <textarea class="form-control" id="hasOffenceNationalSecurity-yes" rows="3"></textarea>
+                        </div>
                         <div class="form-group">
                             <label for="hasGenocideOffence">Has any applicant ever been charged with, or indicted for: genocide, war crimes, crimes against humanity, torture, slavery, or any other crime that is otherwise of a serious international concern?</label>
                             <select class="form-control" id="hasGenocideOffence" name="hasGenocideOffence">
@@ -4412,6 +4448,10 @@
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
                             </select>
+                        </div>
+                        <div class="form-group hasGenocideOffence-yes" style="display: none;">
+                            <label for="hasGenocideOffence-yes">Give details</label>
+                            <textarea class="form-control" id="hasGenocideOffence-yes" rows="3"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="hasAssociatedWithCriminal">Has any applicant ever been associated with a person, group or organisation that has been or is involved in criminal conduct?</label>
@@ -4421,6 +4461,10 @@
                                 <option value="no">No</option>
                             </select>
                         </div>
+                        <div class="form-group hasAssociatedWithCriminal-yes" style="display: none;">
+                            <label for="hasAssociatedWithCriminal-yes">Give details</label>
+                            <textarea class="form-control" id="hasAssociatedWithCriminal-yes" rows="3"></textarea>
+                        </div>
                         <div class="form-group">
                             <label for="hasAssociatedWithWarCrimeOrganisation">Has any applicant ever been associated with an organisation engaged in violence or engaged in acts of violence (including war, insurgency, freedom fighting, terrorism, protest) either overseas or in applied country?</label>
                             <select class="form-control" id="hasAssociatedWithWarCrimeOrganisation" name="hasAssociatedWithWarCrimeOrganisation">
@@ -4428,6 +4472,10 @@
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
                             </select>
+                        </div>
+                        <div class="form-group hasAssociatedWithWarCrimeOrganisation-yes" style="display: none;">
+                            <label for="hasAssociatedWithWarCrimeOrganisation-yes">Give details</label>
+                            <textarea class="form-control" id="hasAssociatedWithWarCrimeOrganisation-yes" rows="3"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="hasServedInAnyForce">Has any applicant ever served in a military force, police force, state sponsored / private militia or intelligence agency (including secret police)?</label>
@@ -4437,6 +4485,10 @@
                                 <option value="no">No</option>
                             </select>
                         </div>
+                        <div class="form-group hasOffenceCurrentlyAwaiting-yes" style="display: none;">
+                            <label for="hasOffenceCurrentlyAwaiting-yes">Give details</label>
+                            <textarea class="form-control" id="hasOffenceCurrentlyAwaiting-yes" rows="3"></textarea>
+                        </div>
                         <div class="form-group">
                             <label for="hasMilitaryTraining">Has any applicant ever undergone any military/paramilitary training, been trained in weapons/explosives or in the manufacture of chemical/biological products?</label>
                             <select class="form-control" id="hasMilitaryTraining" name="hasMilitaryTraining">
@@ -4444,6 +4496,10 @@
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
                             </select>
+                        </div>
+                        <div class="form-group hasMilitaryTraining-yes" style="display: none;">
+                            <label for="hasMilitaryTraining-yes">Give details</label>
+                            <textarea class="form-control" id="hasMilitaryTraining-yes" rows="3"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="hasTraffickingOffences">Has any applicant ever been involved in people smuggling or people trafficking offences?</label>
@@ -4453,6 +4509,10 @@
                                 <option value="no">No</option>
                             </select>
                         </div>
+                        <div class="form-group hasTraffickingOffences-yes" style="display: none;">
+                            <label for="hasTraffickingOffences-yes">Give details</label>
+                            <textarea class="form-control" id="hasTraffickingOffences-yes" rows="3"></textarea>
+                        </div>
                         <div class="form-group">
                             <label for="hasRemovedFromAnyCountry">Has any applicant ever been removed, deported or excluded from any country (including applied country)?</label>
                             <select class="form-control" id="hasRemovedFromAnyCountry" name="hasRemovedFromAnyCountry">
@@ -4460,6 +4520,10 @@
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
                             </select>
+                        </div>
+                        <div class="form-group hasRemovedFromAnyCountry-yes" style="display: none;">
+                            <label for="hasRemovedFromAnyCountry-yes">Give details</label>
+                            <textarea class="form-control" id="hasRemovedFromAnyCountry-yes" rows="3"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="hasOverstayedVisa">Has any applicant ever overstayed a visa in any country (including applied country)?</label>
@@ -4469,6 +4533,10 @@
                                 <option value="no">No</option>
                             </select>
                         </div>
+                        <div class="form-group hasOverstayedVisa-yes" style="display: none;">
+                            <label for="hasOverstayedVisa-yes">Give details</label>
+                            <textarea class="form-control" id="hasOverstayedVisa-yes" rows="3"></textarea>
+                        </div>
                         <div class="form-group">
                             <label for="hasOutstandingDebts">Has any applicant ever had any outstanding debts to the Government or any public authority in country of residence or applied country?</label>
                             <select class="form-control" id="hasOutstandingDebts" name="hasOutstandingDebts">
@@ -4476,6 +4544,10 @@
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
                             </select>
+                        </div>
+                        <div class="form-group hasOutstandingDebts-yes" style="display: none;">
+                            <label for="hasOutstandingDebts-yes">Give details</label>
+                            <textarea class="form-control" id="hasOutstandingDebts-yes" rows="3"></textarea>
                         </div>
                     </div>
                 </div>
@@ -4577,7 +4649,7 @@
                         </div>
                     </div>
                     <div class="form-box">
-                        <h5>Australian values</h5>
+                        <h5>Values</h5>
                         <div class="form-group">
                             <label for="applicantIsOver18">Each applicant who is 18 years or over has read, or had explained to them, information provided by the applied country’s Government on applied country’s society and values, and agrees to the applied country’s values statement.</label>
                             <select class="form-control" id="applicantIsOver18" name="applicantIsOver18">

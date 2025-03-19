@@ -267,6 +267,111 @@ $(document).ready(function() {
             $('.requireOngoingMedicalCare-yes').hide();
         }
     });
+    $('#hasOffenceCurrentlyAwaiting').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasOffenceCurrentlyAwaiting-yes').show();
+        } else {
+            $('.hasOffenceCurrentlyAwaiting-yes').hide();
+        }
+    });
+    $('#hasRemovedOffence').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasRemovedOffence-yes').show();
+        } else {
+            $('.hasRemovedOffence-yes').hide();
+        }
+    });
+    $('#hasDomesticViolence').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasDomesticViolence-yes').show();
+        } else {
+            $('.hasDomesticViolence-yes').hide();
+        }
+    });
+    $('#hasArrestWarrant').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasArrestWarrant-yes').show();
+        } else {
+            $('.hasArrestWarrant-yes').hide();
+        }
+    });
+    $('#hasSexualOffence').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasSexualOffence-yes').show();
+        } else {
+            $('.hasSexualOffence-yes').hide();
+        }
+    });
+    $('#hasRegisteredSexualOffence').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasRegisteredSexualOffence-yes').show();
+        } else {
+            $('.hasRegisteredSexualOffence-yes').hide();
+        }
+    });
+    $('#hasInsanityOffence').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasInsanityOffence-yes').show();
+        } else {
+            $('.hasInsanityOffence-yes').hide();
+        }
+    });
+    $('#hasInCourtNotPlead').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasInCourtNotPlead-yes').show();
+        } else {
+            $('.hasInCourtNotPlead-yes').hide();
+        }
+    });
+    $('#hasOffenceNationalSecurity').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasOffenceNationalSecurity-yes').show();
+        } else {
+            $('.hasOffenceNationalSecurity-yes').hide();
+        }
+    });
+    $('#hasGenocideOffence').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasGenocideOffence-yes').show();
+        } else {
+            $('.hasGenocideOffence-yes').hide();
+        }
+    });
+    $('#hasAssociatedWithCriminal').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasAssociatedWithCriminal-yes').show();
+        } else {
+            $('.hasAssociatedWithCriminal-yes').hide();
+        }
+    });
+    $('#hasMilitaryTraining').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasMilitaryTraining-yes').show();
+        } else {
+            $('.hasMilitaryTraining-yes').hide();
+        }
+    });
+    $('#hasTraffickingOffences').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasTraffickingOffences-yes').show();
+        } else {
+            $('.hasTraffickingOffences-yes').hide();
+        }
+    });
+    $('#hasRemovedFromAnyCountry').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasRemovedFromAnyCountry-yes').show();
+        } else {
+            $('.hasRemovedFromAnyCountry-yes').hide();
+        }
+    });
+    $('#hasOverstayedVisa').change(function() {
+        if ($(this).val() === 'yes') {
+            $('.hasOverstayedVisa-yes').show();
+        } else {
+            $('.hasOverstayedVisa-yes').hide();
+        }
+    });
 
     $('#authorisedRecipient').change(function() {
         if ($(this).val() === '1') {

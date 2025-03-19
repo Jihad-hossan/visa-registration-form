@@ -3,6 +3,7 @@
     --white: #fff;
     --background-color: #f6f6f6;
     --btn-bg: rgb(53, 151, 53);
+    --red: #FF0000;
 }
 
 
@@ -53,7 +54,10 @@
 }
 .form-card .info{
     font-size: 14px;
-    color: var(--btn-bg);
+    color: var(--red);
+}
+.info-big, .text-warning {
+    color: var(--red) !important;
 }
 .card-footer .btn, .remove-entry{
     color: var(--white);
