@@ -409,22 +409,6 @@ $(document).ready(function() {
         }
     });
 
-    // ================================
-    // Popups
-    // ================================
-    // Show the NID popup
-    // $('#hasNID').change(function() {
-    //     if ($(this).val() === 'yes') {
-    //         $('#nidPopup').modal('show'); // Show the popup
-    //     }
-    // });
-    // $('#confirmNID').click(function() {
-    //     $('#nidPopup').modal('hide'); // Hide the popup
-    // });
-    // $('[data-dismiss="modal"]').click(function() {
-    //     $('#nidPopup').modal('hide'); // Hide the popup
-    // });
-
 
      // ================================
     // Change value dynamicaly
@@ -1121,11 +1105,58 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+
+
+
+//form validation
+
+function validateStep() {
+    let valid = true;
+    $(".step:visible").find('input[required]:visible, select[required]:visible, textarea[required]:visible').each(function () {
+        if (!($(this).val() || '').trim()) {
+            valid = false;
+            return false; // Stop loop if a field is empty
+        }
+    });
+    $(".next").prop("disabled", !valid);
+    $(".submit").prop("disabled", !valid);
+}
+
+
+
+
+// Listen for changes on required fields (input, select, textarea)
+$(document).on('input change', '.step:visible input[required], .step:visible select[required], .step:visible textarea[required]', function () {
+    validateStep();
+});
+
+// Optional: Run once on page load
+$(document).ready(function () {
+    validateStep();
+});
+
+
+$(".next, .back").on('click', function () {
+    validateStep();
+});
+
+
+
+
+
+
+
+
+
+
 // ================================
 // Modify Date
 // ================================
 document.getElementById('dateOfIssue').max = new Date().toISOString().split('T')[0];
 document.getElementById('dateOfBirth').max = new Date().toISOString().split('T')[0];
 
-// disable previous
+//disable previous
 document.getElementById('dateOfExpiry').min = new Date().toISOString().split('T')[0];
+
+
+
