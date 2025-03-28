@@ -381,13 +381,6 @@ $(document).ready(function() {
             $('.hasOverstayedVisa-yes').hide();
         }
     });
-    $('#CountryOfResidence').change(function() {
-        if ($(this).val() === 'yes') {
-            $('.CountryOfResidence-yes').show();
-        } else {
-            $('.CountryOfResidence-yes').hide();
-        }
-    });
 
     $('#authorisedRecipient').change(function() {
         if ($(this).val() === '1') {
